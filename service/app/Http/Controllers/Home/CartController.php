@@ -22,9 +22,12 @@ class CartController extends BaseController
 
     // 获取购物车数量
     public function get_cart_count(Cart $cart_model){
-        $user_info = auth()->user();
-        $count = $cart_model->where('user_id',$user_info['id'])->count();
-        return $this->success_msg('ok',$count);
+        if (auth()->check()){
+            $user_info = auth()->user();
+            $count = $cart_model->where('user_id',$user_info['id'])->count();
+            return $this->success_msg('ok',$count);            
+        }
+        return $this->success_msg('ok');
     }
 
     // 加入购物车

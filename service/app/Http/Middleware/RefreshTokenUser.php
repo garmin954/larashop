@@ -24,7 +24,7 @@ class RefreshTokenUser extends BaseMiddleware
         try{
             $this->checkForToken($request);
         } catch(UnauthorizedHttpException $e){
-            return response()->json(['code'=>401,'msg'=>'Token Not Provided']);
+            return response()->json(['code'=>401,'msg'=>'请登录！']);
         }
         
 

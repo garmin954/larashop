@@ -28,7 +28,7 @@ class RegisterRequest extends FormRequest
         return [
             'phone' => ['required', new MobileRule(), 'unique:users'],
             'password' => ['required'],
-            'code' => ['required', new MsgCodeRule(request()->phone)]
+//            'code' => ['required', new MsgCodeRule(request()->phone)]
         ];
     }
 

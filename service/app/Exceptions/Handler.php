@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Tymon\JWTAuth\Validators\TokenValidator;
 
 class Handler extends ExceptionHandler
 {
@@ -53,6 +54,11 @@ class Handler extends ExceptionHandler
                 'msg' => current($exception->errors())[0],
                 'code' => $exception->status,
             ]);
+        }else if($exception instanceof TokenValidator){
+//            return response()->json([
+//                'msg' => current($exception->errors())[0],
+//                'code' => $exception->status,
+//            ]);
         }
         return parent::render($request, $exception);
     }

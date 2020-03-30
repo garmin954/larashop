@@ -22,7 +22,7 @@ class AddressController extends BaseController
             'user_id'       =>  $user_info['id'],
             'province_id'   =>  $request->area_info[0],
             'city_id'       =>  $request->area_info[1],
-            'region_id'     =>  $request->area_info[2],
+            'region_id'     =>  isset($request->area_info[2])?:'',
             'lat'           =>  '',
             'lng'           =>  '',
             'area_info'     =>  $area_info[0]['name'].' '.$area_info[1]['name'].' '.$area_info[2]['name'],
