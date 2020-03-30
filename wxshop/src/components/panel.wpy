@@ -1,4 +1,7 @@
 <style lang="less">
+  panel {
+    width: 100%;
+  }
   .panel {
     width: 100%;
     margin-top: 20rpx;
@@ -27,17 +30,11 @@
   }
 </style>
 <template>
-  <view class="panel">
+  <div class="panel">
     <slot name="title">
       Title
     </slot>
     <slot>
     </slot>
-  </view>
+  </div>
 </template>
-<script>
-  import wepy from 'wepy'
-
-  export default class Panel extends wepy.component {
-  }
-</script>

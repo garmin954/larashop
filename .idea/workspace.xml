@@ -2,59 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0a7512-5d4a-4723-b827-cc12e1615510" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/page/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/page/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/src/plugins/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/page/src/plugins/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/src/views/Admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/page/src/views/Admin/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AdvController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AdvController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AdvPositionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AdvPositionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AgreementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AgreementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AreaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/AreaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/CashLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/CashLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/ConfigController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsBrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsBrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsClassController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/HooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/HooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralClassController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/IntegralOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/MenusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/MenusController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/RolesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/SeckillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/SeckillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/SmsLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/SmsLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/StoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/StoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Chat/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Chat/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/AddressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/CashLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/CashLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/IntegralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/IntegralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/IntegralOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/IntegralOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/MoneyLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/MoneyLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/PayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/PayController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/SeckillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/SeckillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreCommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreCommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreJoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/StoreJoinController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Home/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Home/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/AttrSpecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/AttrSpecController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/FreightTemplateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/FreightTemplateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/GroupbuyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/GroupbuyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/SeckillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/SeckillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/StoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/StoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/StoreGoodsClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Http/Controllers/Seller/StoreGoodsClassController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/app/Tools/Uploads.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/app/Tools/Uploads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/service/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/app.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/counter.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/counter.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/group.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/group.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/groupitem.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/groupitem.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/list.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/list.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/panel.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/panel.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/components/wepy-list.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/wepy-list.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/index.template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/mixins/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/mixins/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/actions/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/actions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/reducers/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/types/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/store/types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/wepy.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/wepy.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +38,7 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/service" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -241,7 +211,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585053751363</updated>
       <workItem from="1585053752847" duration="7961000" />
-      <workItem from="1585465122436" duration="9963000" />
+      <workItem from="1585465122436" duration="12369000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,60 @@
+<style lang="less">
+ .btn{background: blueviolet}
+</style>
+ 
+<template>
+  <div class="container">
+    
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import eventHub from '@/common/eventHub';
+  import { mapState } from '@wepy/x';
+
+
+  wepy.page({
+    store,
+    config: {
+      navigationBarTitleText: 'test'
+    },
+
+    hooks: {
+      
+    },
+
+    data: {
+      userInfo:[]
+    },
+
+    computed: {
+      
+    },
+
+    methods: {
+      goLogin(){
+        
+        this.$navigate({url:"/pages/layout/login"})
+      }
+    },
+
+    created () {
+      let self = this
+     
+      wx.getUserInfo({
+        success (res) {
+          self.userInfo = res.userInfo;
+          console.log('resresres')
+          console.log(res)
+        }
+      });
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: '登录',
+  
+}
+</config>

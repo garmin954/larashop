@@ -1,74 +1,69 @@
 <style lang="less">
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
+  @import "./components/colorui/icon.css";
+  @import "./components/colorui/main.css";
 </style>
 
 <script>
-import wepy from 'wepy'
-import 'wepy-async-function'
+import wepy from '@wepy/core';
+import eventHub from './common/eventHub';
+import vuex from '@wepy/x';
+// import config from '../static/'
+wepy.use(vuex);
 
-import { setStore } from 'wepy-redux'
-import configStore from './store'
 
-const store = configStore()
-setStore(store)
-
-export default class extends wepy.app {
-  config = {
-    pages: [
-      'pages/index'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+wepy.app({
+  hooks: {
+    // App 级别 hook，对整个 App 生效
+    // 同时存在 Page hook 和 App hook 时，优先执行 Page hook，返回值再交由 App hook 处
+    'before-setData': function (dirty) {
+      console.log('setData dirty: ', dirty);
+      return dirty;
     }
-  }
-
-  globalData = {
+  },
+  globalData: {
     userInfo: null
-  }
-
-  constructor () {
-    super()
-    this.use('requestfix')
-  }
+  },
 
   onLaunch() {
-    this.testAsync()
-  }
+    this.testAsync();
+    eventHub.$on('app-launch', (...args) => {
+      console.log('app-launch event emitted, the params are:');
+      console.log(args);
+    });
+  },
 
-  sleep (s) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('promise resolved')
-      }, s * 1000)
-    })
-  }
+  methods: {
 
-  async testAsync () {
-    const data = await this.sleep(3)
-    console.log(data)
-  }
+    sleep (s) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('promise resolved')
+        }, s * 1000)
+      })
+    },
 
-  getUserInfo(cb) {
-    const that = this
-    if (this.globalData.userInfo) {
-      return this.globalData.userInfo
+    async testAsync () {
+      let d = await this.sleep(3);
+      console.log(d);
     }
-    wepy.getUserInfo({
-      success (res) {
-        that.globalData.userInfo = res.userInfo
-        cb && cb(res.userInfo)
-      }
-    })
   }
-}
+
+  
+});
 </script>
+<config>
+{
+  'pages': [
+        'pages/index',
+        'pages/layout/login',
+       
+    ],
+  'window': {
+        backgroundTextStyle: 'light',
+        navigationBarBackgroundColor: '#fff',
+        navigationBarTitleText: 'WeChat',
+        navigationBarTextStyle: 'black'
+  },
+  
+}
+</config>

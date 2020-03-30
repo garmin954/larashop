@@ -9,7 +9,7 @@
 	"compileType": "miniprogram",
 	"appid": "touristappid",
 	"projectname": "wxshop",
-	"miniprogramRoot": "dist/",
+	"miniprogramRoot": "weapp/",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {}
