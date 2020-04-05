@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0a7512-5d4a-4723-b827-cc12e1615510" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wxshop/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/project.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wxshop/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/app.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/counter.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/counter.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/group.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/group.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/groupitem.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/groupitem.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/list.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/list.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/panel.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/panel.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/wepy-list.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/components/wepy-list.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/index.template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/mixins/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/mixins/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/actions/counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/actions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/reducers/counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/reducers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/types/counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/common/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/common/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/common/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/mixins/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxshop/src/pages/home/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/pages/home/index.wpy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wxshop/wepy.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/wepy.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +24,15 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/wxshop" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -178,14 +172,28 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/小飞兔整站下载V7.0/Website/Zz_jietuyun.com_2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/wxshop/src/vendor" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSLint" />
+    <property name="ts.external.directory.path" value="D:\editTool\PhpStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\code\shop\service\app\Rules" />
+      <recent name="E:\code\shop\wxshop\src\common" />
+      <recent name="E:\code\shop\wxshop\src\mixins" />
+      <recent name="E:\code\shop\wxshop\src\components" />
+      <recent name="E:\code\shop\wxshop\src\pages\home" />
+      <recent name="E:\code\shop\wxshop\static\vender" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\shop\wxshop\src\vendor" />
+      <recent name="E:\code\shop\wxshop\src\components\swiper" />
+      <recent name="E:\code\shop\wxshop\src\vendor\iview" />
+      <recent name="E:\code\shop\wxshop\src" />
+      <recent name="E:\code\shop\wxshop\static\vender\iview" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -212,6 +220,11 @@
       <updated>1585053751363</updated>
       <workItem from="1585053752847" duration="7961000" />
       <workItem from="1585465122436" duration="12369000" />
+      <workItem from="1585837045174" duration="628000" />
+      <workItem from="1585990083563" duration="328000" />
+      <workItem from="1585990780743" duration="20760000" />
+      <workItem from="1586070665857" duration="5610000" />
+      <workItem from="1586090183091" duration="10314000" />
     </task>
     <servers />
   </component>
@@ -219,17 +232,49 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1585468574290">
+    <state x="431" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586100679713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585468574290" />
+    <state x="431" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1586100679713" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1585838653014">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585838653014" />
+    <state x="423" y="177" key="NewPhpClassDialog" timestamp="1586063051807">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="423" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1586063051807" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1586090138776">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586090138776" />
     <state x="404" y="105" width="582" height="524" key="StructurePopup" timestamp="1585055437765">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="105" width="582" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1585055437765" />
-    <state x="290" y="64" width="786" height="600" key="find.popup" timestamp="1585491305101">
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586090187166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="290" y="64" width="786" height="600" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1585491305101" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586090187166" />
+    <state x="290" y="64" width="786" height="600" key="find.popup" timestamp="1586092705912">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="290" y="64" width="786" height="600" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586092705912" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/wxshop/src/app.wpy</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/wxshop/src/app.wpy</url>
+          <line>34</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,175 @@
+<style lang="less">
+  @import "~STATIC/less/index.less"; // library.less
+  .carouselImg{
+    width: 100%;
+    height: 100%;
+  }
+  .gamin-banner{
+    height: 350rpx;
+    .radius-shadow();
+  }
+  .body-container{
+    width: @container;
+    margin: 0 auto;
+  }
+  .menu-box{}
+  swiper {height: 100%!important;}
+</style>
+
+<template>
+  <div class="container">
+    <div class="gamin-search">
+      <van-search
+        value="{{ value }}"
+        placeholder="请输入搜索关键词"
+        use-action-slot
+        :change="onChange"
+        :search="onSearch"
+      >
+        <view slot="action" @tap="onClick">搜索</view>
+      </van-search>
+    </div>
+
+    <div class="gamin-banner body-container">
+        <swiper indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="auto" circular="auto">
+          <block v-for="(item, index) in bannerList" :key="index">
+            <swiper-item data-url="{{item.adv_image}}">
+              <img class="carouselImg"  :src="item.adv_image"/>
+            </swiper-item>
+          </block>
+        </swiper>
+<!--      /*几个有用的说明：-->
+<!--      indicator-dots 是否显示指示器-->
+<!--      indicator-color 指示器默认颜色-->
+<!--      indicator-active-color   指示器选中颜色-->
+<!--      autoplay 是否自动播放-->
+<!--      interval 每一页停留的时长-->
+<!--      circular 播放到最后一页后是否再衔接第一页循环播放-->
+<!--      */-->
+    </div>
+
+    <div class="menu-box body-container">
+      <van-grid square>
+        <van-grid-item icon="photo-o" text="文字"  wx:for="{{ 8 }}" />
+
+
+      </van-grid>
+    </div>
+
+    <van-toast id="van-toast"/>
+<!--    <van-toast id="custom-selector"></van-toast>-->
+  </div>
+
+</template>
+
+<script>
+  import wepy from "@wepy/core"
+  import store from "@/store"
+  import Toast from "@/vendor/vant/toast/toast"
+
+  var self;
+  wepy.page({
+    store,
+    config: {
+      navigationBarTitleText: "test"
+    },
+    hooks: {
+      // Page 级别 hook, 只对当前 Page 的 setData 生效。
+      "before-setData": function (dirty) {
+        if (Math.random() < 0.2) {
+          console.log("setData canceled")
+          return false // Cancel setData
+        }
+        dirty.time = +new Date()
+        return dirty
+      }
+    },
+    data: {
+      value: "搜索",
+      auto: true,
+      time: 2000,
+      bannerList: [
+        {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'}
+      ],
+    },
+
+    computed: {
+    },
+
+    methods: {
+      get_banner(){
+        console.log(self.$app);
+        // console.log(self);
+        self.$app.$get('get_banner', {}).then(response => {
+          console.log(response);
+          if (response.data.code > 0) {
+            self.bannerList = response.data.data.banner_list
+            console.log(self.bannerList);
+          }
+        }).catch(error => {
+          console.log(error);
+          Toast.success('失败文案');
+        })
+      },
+      onChange(e) {
+        this.value = e.detail
+
+      },
+      onSearch() {
+        console.log('sd京拉');
+        // Toast.success('成功文案');
+        Toast.loading({
+          mask: true,
+          message: '加载中...'
+        });
+      },
+      onClick() {
+        console.log('京拉');
+        // Toast.success('成功文案');
+        Toast.loading({
+          mask: true,
+          message: '加载中...'
+        });
+
+      },
+      loading(){
+        Toast.loading({
+          mask: true,
+          message: '加载中...',
+          duration:0
+        });
+      }
+    },
+
+    created (){
+      // wx.getUserInfo({
+      //   success (res) {
+      //     self.userInfo = res.userInfo
+      //   }
+      // })
+    },
+    onLoad(){
+      self = this
+      self.loading();
+      self.get_banner();
+    },
+    onReady(){
+      console.log('加载完成');
+      setTimeout(res => Toast('加载完成'), 2000);
+
+    }
+  })
+</script>
+<config>
+{
+    navigationBarTitleText: "Garmin商城",
+    usingComponents: {
+        "i-input": "~@/vendor/iview/input/index",
+        "i-card": "~@/vendor/iview/card/index",
+        "van-search": "~@/vendor/vant/search/index",
+        "van-toast": "~@/vendor/vant/toast/index",
+        "van-grid": "~@/vendor/vant/grid/index",
+        "van-grid-item" : "~@/vendor/vant/grid-item",
+    }
+}
+</config>

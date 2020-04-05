@@ -16,9 +16,9 @@
   "author": "garmin <1549088785@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "@vant/weapp": "^1.2.0",
     "@wepy/core": "^2.0.0-alpha.9",
     "@wepy/x": "^2.0.2",
-    "colorui": "^1.0.0",
     "miniprogram-slide-view": "0.0.3"
   },
   "devDependencies": {

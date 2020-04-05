@@ -448,3 +448,14 @@ Route::namespace('chat')->group(function(){
 
 
 });
+
+
+
+
+
+/****************************小程序接口**************************/
+
+
+Route::namespace('Weixin')->prefix('weixin')->group(function(){
+    Route::get('/index/get_banner_list', 'IndexController@getBannerList');
+});

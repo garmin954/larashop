@@ -3,9 +3,11 @@
 namespace App\Tools;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManager;
 use App\Models\Config;
 use Illuminate\Http\Request;
+use function Psy\debug;
 
 class Uploads extends Controller{
 
@@ -267,18 +269,17 @@ class Uploads extends Controller{
             return $this->resp;
         }
 
-        $config_model = new Config;
-        $config_list = $config_model->get();
+        $config_list = Config::get();
         $config_list_format = get_format_config($config_list);
         $this->data['config_list_format'] = $config_list_format;
 
+        Log::debug('$config_list_format', $config_list_format);
         $ali_oss_config = $config_list_format['alioss'];
         $config_alioss_format = json_decode($ali_oss_config,true);
         $this->data['config_alioss_format'] = $config_alioss_format;
 
-
         // 判断是本地上传还是OSS
-        if(isset($config_alioss_format['status']) && !empty($config_alioss_format['status'])){
+        if(isset($config_alioss_format['status']) && !empty($config_alioss_format['status']) && $config_alioss_format['status']=="1"){
 
             $this->OssClient = new \OSS\OssClient($config_alioss_format['access_key'], $config_alioss_format['secret_access'], $config_alioss_format['endpoint']);
 
@@ -296,6 +297,7 @@ class Uploads extends Controller{
             }
 
         }else{
+
             $returnPath = '/Uploads/'.date('Y_m_d');
 
             // 文件存储路径
@@ -323,6 +325,7 @@ class Uploads extends Controller{
 
         $this->resp['path'] = [];
         $files = request()->file($this->data['name']);
+
 
         // 判断是多文件上传还是单文件
         if(isset($data['is_many'])){
@@ -392,6 +395,7 @@ class Uploads extends Controller{
 
             $oss_real_path = $this->data['oss_real_path'].'/'.$filename.'.'.$ext;
 
+
             // 实例化扩展 使用gd
             $manager = new ImageManager(['driver' => 'gd']);
 
@@ -413,6 +417,8 @@ class Uploads extends Controller{
                     $this->resp['msg'] = $e->getMessage();
                 }
             }else{
+                Log::debug('配置222sad111', [ $this->data['config_list_format']['web_url'],$oss_real_path]);
+
                 $this->resp['path'] = $this->data['config_list_format']['web_url'].$this->data['return_path'].'/'.$filename.'.'.$ext;;
                 $this->resp['status'] = true;
             }
