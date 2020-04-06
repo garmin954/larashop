@@ -1,0 +1,41 @@
+.radius-shadow {
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 8rpx #e4edff;
+  overflow: hidden;
+}
+.carouselImg {
+  width: 100%;
+  height: 100%;
+}
+.gamin-banner {
+  height: 350rpx;
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 8rpx #e4edff;
+  overflow: hidden;
+}
+.body-container {
+  width: 95%;
+  margin: 0 auto;
+}
+swiper {
+  height: 100%!important;
+}
+.group-buy-box {
+  height: 300rpx;
+}
+.group-buy-box .swiper_item {
+  width: 100%;
+  height: 100%;
+}
+.group-buy-box .swiper_item image {
+  width: 100%;
+  height: 100%;
+}
+.group-buy-box swiper-item {
+  box-sizing: content-box;
+  padding-right: 10rpx;
+}
+.group-buy-box swiper-item:nth-last-child(1) {
+  /*padding-right: 0rpx!important;*/
+}
+

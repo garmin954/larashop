@@ -14,6 +14,28 @@
   }
   .menu-box{}
   swiper {height: 100%!important;}
+  
+  .group-buy-box{
+      height: 300rpx;
+      .swiper_item{
+          width: 100%;
+          height: 100%;
+          
+          image{
+              width: 100%;
+              height: 100%;
+          }
+      }
+   
+      swiper-item{
+         box-sizing: content-box;
+          padding-right: 10rpx;
+      }
+      swiper-item:nth-last-child(1){
+          /*padding-right: 0rpx!important;*/
+      }
+     
+  }  
 </style>
 
 <template>
@@ -47,14 +69,26 @@
 <!--      circular 播放到最后一页后是否再衔接第一页循环播放-->
 <!--      */-->
     </div>
-
+      
+    <!--菜单  -->
     <div class="menu-box body-container">
       <van-grid square>
         <van-grid-item icon="photo-o" text="文字"  wx:for="{{ 8 }}" />
-
-
       </van-grid>
     </div>
+      
+    <!--拼团  -->
+    <div class="group-buy-box body-container">
+        <swiper previous-margin="10rpx" :indicator-dots="vertical"  :autoplay ="autoplay" :display-multiple-items="item" next-margin="150rpx" class="image_group">
+            <block  v-for="(photo, index) in groupBuy"   :key="index">
+                <swiper-item>
+                    <view class="swiper_item">
+                        <img :src="photo.adv_image" />
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </div>  
 
     <van-toast id="van-toast"/>
 <!--    <van-toast id="custom-selector"></van-toast>-->
@@ -64,12 +98,10 @@
 
 <script>
   import wepy from "@wepy/core"
-  import store from "@/store"
   import Toast from "@/vendor/vant/toast/toast"
 
   var self;
   wepy.page({
-    store,
     config: {
       navigationBarTitleText: "test"
     },
@@ -91,6 +123,15 @@
       bannerList: [
         {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'}
       ],
+      groupBuy:[
+          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
+          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
+          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
+          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
+      ],
+
+      item: 2,
+      vertical: true  
     },
 
     computed: {
@@ -104,6 +145,7 @@
           console.log(response);
           if (response.data.code > 0) {
             self.bannerList = response.data.data.banner_list
+            self.$apply();
             console.log(self.bannerList);
           }
         }).catch(error => {
