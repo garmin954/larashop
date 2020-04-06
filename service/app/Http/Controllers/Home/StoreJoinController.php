@@ -12,14 +12,14 @@ use App\Models\StoreClass;
 
 class StoreJoinController extends BaseController
 {
-    public function join(Request $request,Area $area_model,Store $store_model,StoreClass $store_class_model){
+    public function join(Request $request){
         $user_info = auth()->user();
-        $store_info = $store_model->where('user_id',$user_info['id'])->first();
+        $store_info = Store::where('user_id',$user_info['id'])->first();
         if($request->isMethod('get')){
             if(!empty($store_info)){
                 $store_info = $store_info->toArray();
                 $store_info['area_info'] = [$store_info['province_id'],$store_info['city_id'],$store_info['region_id']];
-                $store_class = $store_class_model->where('store_id',$store_info['id'])->first(); // 申请商品分类
+                $store_class = StoreClass::where('store_id',$store_info['id'])->first(); // 申请商品分类
                 $class_1 = explode(',',$store_class['class_1']);
                 $class_2 = explode(',',$store_class['class_2']);
                 $class_3 = explode(',',$store_class['class_3']);
@@ -40,7 +40,7 @@ class StoreJoinController extends BaseController
 			DB::beginTransaction();
 
 
-            $area_list = $area_model->whereIn('id',$request->area_info)->get();
+            $area_list = Area::whereIn('id',$request->area_info)->get();
             $data = [
                 'province_id'               =>  $request->area_info[0],
                 'city_id'                   =>  $request->area_info[1],
@@ -67,11 +67,11 @@ class StoreJoinController extends BaseController
 
 
             if(empty($store_info)){
-                $store_id = $store_model->insertGetId($data);
+                $store_id = Store::insertGetId($data);
             }else{
                 $store_id = $store_info['id'];
-                $store_model->where('id',$store_id)->update($data);
-                $store_class_model->where('store_id',$store_id)->delete();
+                Store::where('id',$store_id)->update($data);
+                StoreClass::where('store_id',$store_id)->delete();
             }
 
             // 选择的商品分类
@@ -86,7 +86,7 @@ class StoreJoinController extends BaseController
                 $class_data['class_2'][] = $v[1];
                 $class_data['class_3'][] = $v[2];
             }
-            $rs = $store_class_model->insert(['store_id'=>$store_id,'class_1'=>implode(',',$class_data['class_1']),'class_2'=>implode(',',$class_data['class_2']),'class_3'=>implode(',',$class_data['class_3'])]);
+            $rs = StoreClass::insert(['store_id'=>$store_id,'class_1'=>implode(',',$class_data['class_1']),'class_2'=>implode(',',$class_data['class_2']),'class_3'=>implode(',',$class_data['class_3'])]);
 
             // 执行无错误则提交
             DB::commit();

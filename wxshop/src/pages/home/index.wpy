@@ -10,13 +10,18 @@
   }
   .body-container{
     width: @container;
-    margin: 0 auto;
+    margin: 20rpx auto;
   }
   .menu-box{}
-  swiper {height: 100%!important;}
-  
+
   .group-buy-box{
-      height: 300rpx;
+      height: 420rpx;
+      border-radius: 15rpx 15rpx 15rpx 15rpx;
+      padding: 25rpx 10rpx;
+      box-sizing: border-box;
+      position: relative;
+      .gradient();
+
       .swiper_item{
           width: 100%;
           height: 100%;
@@ -26,15 +31,32 @@
               height: 100%;
           }
       }
-   
-      swiper-item{
-         box-sizing: content-box;
-          padding-right: 10rpx;
+      swiper{
+          height: 300rpx;
+
+          swiper-item{
+              box-sizing: content-box;
+              padding-right: 10rpx;
+          }
+          swiper-item:nth-last-child(1){
+              /*padding-right: 0rpx!important;*/
+          }
       }
-      swiper-item:nth-last-child(1){
-          /*padding-right: 0rpx!important;*/
+      .group-buy-header{
+          height: 50rpx;
+          margin-bottom: 20rpx;
+
+          .group-buy-title{
+              float: left;
+              color: #ffffff;
+              font-family: 黑体;
+          }
+
+          .group-buy-go{
+              float: right;
+              color: #f2da01;
+          }
       }
-     
   }  
 </style>
 
@@ -60,14 +82,6 @@
             </swiper-item>
           </block>
         </swiper>
-<!--      /*几个有用的说明：-->
-<!--      indicator-dots 是否显示指示器-->
-<!--      indicator-color 指示器默认颜色-->
-<!--      indicator-active-color   指示器选中颜色-->
-<!--      autoplay 是否自动播放-->
-<!--      interval 每一页停留的时长-->
-<!--      circular 播放到最后一页后是否再衔接第一页循环播放-->
-<!--      */-->
     </div>
       
     <!--菜单  -->
@@ -79,12 +93,15 @@
       
     <!--拼团  -->
     <div class="group-buy-box body-container">
-        <swiper previous-margin="10rpx" :indicator-dots="vertical"  :autoplay ="autoplay" :display-multiple-items="item" next-margin="150rpx" class="image_group">
+        <div class="group-buy-header">
+            <span class="group-buy-title">超值团购</span>
+
+            <i class="group-buy-go"> 更多 》</i>
+        </div>
+        <swiper next-margin="30rpx" indicator-dots="true" display-multiple-items="3"  class="image_group">
             <block  v-for="(photo, index) in groupBuy"   :key="index">
                 <swiper-item>
-                    <view class="swiper_item">
-                        <img :src="photo.adv_image" />
-                    </view>
+                    <gm-goods-group :goods="photo" />
                 </swiper-item>
             </block>
         </swiper>
@@ -121,16 +138,13 @@
       auto: true,
       time: 2000,
       bannerList: [
-        {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'}
+        {adv_image:'/static/images/test.jpg'}
       ],
       groupBuy:[
-          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
-          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
-          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
-          {adv_image:'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'},
+          {adv_image:'/static/images/test.jpg'},
       ],
 
-      item: 2,
+      item: 3,
       vertical: true  
     },
 
@@ -153,6 +167,19 @@
           Toast.success('失败文案');
         })
       },
+      getGroupToHome(){
+          self.$app.$get('get_group_to_home', {}).then(response => {
+              console.log(response);
+              if (response.data.code > 0) {
+                  console.log(self.data);
+                  self.groupBuy = response.data.data.group_list
+                  self.$apply();
+              }
+          }).catch(error => {
+              console.log(error);
+              Toast.success('失败文案');
+          })
+      } ,
       onChange(e) {
         this.value = e.detail
 
@@ -194,12 +221,13 @@
       self = this
       self.loading();
       self.get_banner();
+      self.getGroupToHome();
     },
     onReady(){
       console.log('加载完成');
       setTimeout(res => Toast('加载完成'), 2000);
 
-    }
+    },
   })
 </script>
 <config>
@@ -212,6 +240,7 @@
         "van-toast": "~@/vendor/vant/toast/index",
         "van-grid": "~@/vendor/vant/grid/index",
         "van-grid-item" : "~@/vendor/vant/grid-item",
+        "gm-goods-group" : "~@/components/goods/goods_group",
     }
 }
 </config>

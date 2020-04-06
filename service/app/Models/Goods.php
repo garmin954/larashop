@@ -4,23 +4,37 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\AttrSpec;
+use App\Tools\Model as BaseModel;
 
 class Goods extends Model
 {
+    use BaseModel;
     protected $table = "goods"; //指定表
     protected $primaryKey = "id"; //指定id字段
     public $timestamps = false;
+    protected $params = ['goods_status'=>1,'goods_verify'=>1];  // 上架   和   审核通过
 
+    /**
+     * 关联规格 一对多
+     */
     public function spec(){
         return $this->hasMany('App\Models\GoodsSpec','goods_id','id');
     }
 
+    /**
+     * 关联规格 一对一
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function spec_once(){
         return $this->hasOne('App\Models\GoodsSpec','goods_id','id');
     }
 
-    protected $params = ['goods_status'=>1,'goods_verify'=>1];  // 上架   和   审核通过
 
+    /**
+     * 获取商品详情
+     * @param $id
+     * @return array
+     */
     public function getGoodsInfoById($id){
         $goods_info = $this->where($this->params)->with('spec')->find($id)->toArray();
 
@@ -58,7 +72,7 @@ class Goods extends Model
             foreach($attr_spec_list as $v){
                 $spec_list[$v['id']] = ['name'=>$v['spec_name'],'id'=>$v['id'],'list'=>[]];
             }
-            
+
             foreach($chose_attr_arr as $v){
                 $val = explode('|',$v);
                 $spec_list[$val[0]]['list'][] = ["name"=>$val[1]];
@@ -80,7 +94,12 @@ class Goods extends Model
         return $goods_info;
     }
 
-    // 获取推荐置顶商品列表，根据商家ID
+    /**
+     * 获取推荐置顶商品列表，根据商家ID
+     * @param $id
+     * @param int $page
+     * @return mixed
+     */
     public function getGoodsListByIdOrIsTop($id,$page=8){
         $list = $this->where($this->params)->where('user_id',$id)->orderBy('edit_time','desc')->with('spec_once')->where('is_top',1)->take($page)->get()->toArray();
         // 是否有规格，有规格则取规格价格
@@ -93,5 +112,17 @@ class Goods extends Model
             $list[$k] = $v;
         }
         return $list;
+    }
+
+    /**
+     * 获取团购产品
+     * @param int $nums
+     * @return mixed
+     */
+    public function getGroupToHome($nums=6)
+    {
+        $this->params['is_groupbuy'] = 1;
+        return self::where($this->params)
+            ->offset(0)->limit($nums)->orderByRaw('is_top desc ,edit_time desc')->get()->toArray();;
     }
 }

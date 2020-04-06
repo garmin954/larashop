@@ -1,0 +1,35 @@
+.goods_box {
+  width: 100%!important;
+  height: 100%!important;
+  background: #ffffff;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.goods_box image {
+  width: 100%!important;
+  height: 70%!important;
+}
+.goods_box .goods-name {
+  color: black;
+  font-size: 25rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /*行数*/
+  -webkit-box-orient: vertical;
+}
+.goods_box .goods-foot {
+  display: flex;
+  justify-content: space-between;
+}
+.goods_box .goods-foot .goods_price {
+  font-size: 30rpx;
+  color: #ff634c;
+  font-weight: bold;
+}
+.goods_box .goods-foot .group_name {
+  font-size: 23rpx;
+  color: #ff634c;
+}
+

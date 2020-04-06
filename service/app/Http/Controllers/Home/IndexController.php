@@ -14,7 +14,7 @@ use App\Models\SeckillGoods;
 
 class IndexController extends NotokenController
 {
-    // 导航全部分类的获取 
+    // 导航全部分类的获取
     public function get_subnav_info(GoodsClass $goods_class_model,GoodsBrand $goods_brand_model,AdvPosition $adv_position_model){
         $data['goods_class'] = $goods_class_model->get_goods_class_list();
         $data['goods_brand'] = $goods_brand_model->take(12)->get();
@@ -36,7 +36,7 @@ class IndexController extends NotokenController
                 $data['seckill_goods'][$k]['goods']['goods_price'] = $v['spec_once']['goods_price'];
                 $data['seckill_goods'][$k]['goods']['goods_market_price'] = $v['spec_once']['goods_market_price'];
             }
-        } 
+        }
         $data['seckill_info'] = $seckill_info;
 
         // 栏目商品
@@ -66,6 +66,6 @@ class IndexController extends NotokenController
     }
 
 
-    
+
 
 }

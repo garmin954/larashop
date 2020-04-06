@@ -1,0 +1,9 @@
+
+<view class="goods_box">
+    <image src="{{ goods.goods_images }}" alt="{{ goods.goods_name }}"></image>
+    <view class="goods-name">{{goods.goods_name}}</view>
+    <view class="goods-foot">
+        <label class="goods_price">￥{{goods.groupbuy_price}}</label>
+        <label class="group_name">{{goods.groupbuy_num}}人团</label>
+    </view>
+</view>

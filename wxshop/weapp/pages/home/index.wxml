@@ -2,7 +2,7 @@
   <view class="container">
     <view class="gamin-search">
       <van-search bind_init="_initComponent" value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot change="{{ onChange }}" search="{{ onSearch }}">
-        <view slot="action" data-wpy-evt="8-63" bind:tap="_proxy">搜索</view>
+        <view slot="action" data-wpy-evt="8-149" bind:tap="_proxy">搜索</view>
       </van-search>
     </view>
 
@@ -14,14 +14,6 @@
             </swiper-item>
           </block>
         </swiper>
-
-
-
-
-
-
-
-
     </view>
       
     
@@ -33,12 +25,15 @@
       
     
     <view class="group-buy-box body-container">
-        <swiper previous-margin="10rpx" indicator-dots="{{ vertical }}" autoplay="{{ autoplay }}" display-multiple-items="{{ item }}" next-margin="150rpx" class="image_group">
+        <view class="group-buy-header">
+            <label class="group-buy-title">超值团购</label>
+
+            <view class="group-buy-go"> 更多 》</view>
+        </view>
+        <swiper next-margin="30rpx" indicator-dots="true" display-multiple-items="3" class="image_group">
             <block wx:for="{{ groupBuy }}" wx:for-index="index" wx:for-item="photo" wx:key="index" key="{{ index }}">
                 <swiper-item>
-                    <view class="swiper_item">
-                        <image src="{{ photo.adv_image }}"></image>
-                    </view>
+                    <gm-goods-group bind_init="_initComponent" goods="{{ photo }}"></gm-goods-group>
                 </swiper-item>
             </block>
         </swiper>

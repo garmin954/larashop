@@ -1,0 +1,84 @@
+<style lang="less">
+    .goods_box{
+        width: 100%!important;
+        height: 100%!important;
+        background: #ffffff;
+        padding: 10rpx;
+        box-sizing: border-box;
+
+        image{
+            width: 100%!important;
+            height: 70%!important;
+        }
+        .goods-name{
+            color: black;
+            font-size: 25rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /*行数*/
+            -webkit-box-orient: vertical;
+        }
+        .goods-foot{
+            display: flex;
+            justify-content: space-between;
+
+            .goods_price{
+                font-size: 30rpx;
+                color: #ff634c;
+                font-weight: bold;
+
+            }
+
+            .group_name{
+                font-size: 23rpx;
+                color: #ff634c;
+            }
+        }
+    }
+    
+</style>
+
+<template>
+    <div class="goods_box">
+        <image :src="goods.goods_images" :alt="goods.goods_name"></image>
+        <div class="goods-name">{{goods.goods_name}}</div>
+        <div class="goods-foot">
+            <span class="goods_price">￥{{goods.groupbuy_price}}</span>
+            <span class="group_name">{{goods.groupbuy_num}}人团</span>
+        </div>
+    </div>
+</template>
+
+<script>
+
+    import wepy from '@wepy/core';
+
+    wepy.page({
+        data:{
+
+        },
+        props:{
+            goods:{
+                type: Object,
+                default: {},
+            }
+        },
+
+    })
+</script>
+
+<config>
+    {
+    usingComponents: {
+        "i-input": "~@/vendor/iview/input/index",
+        "i-card": "~@/vendor/iview/card/index",
+        "van-search": "~@/vendor/vant/search/index",
+        "van-toast": "~@/vendor/vant/toast/index",
+        "van-grid": "~@/vendor/vant/grid/index",
+        "van-grid-item" : "~@/vendor/vant/grid-item",
+        }
+    }
+</config>

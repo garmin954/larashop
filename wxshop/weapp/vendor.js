@@ -34,7 +34,7 @@ var process = { env: {} };
    return __wepy_require;
 })([
 /***** module 0 start *****/
-/***** D:\wanmi\student\wxshop\node_modules\regenerator-runtime\runtime.js *****/
+/***** E:\code\shop\wxshop\node_modules\regenerator-runtime\runtime.js *****/
 function(module, exports, __wepy_require) {/**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -769,7 +769,7 @@ try {
 
 
 /***** module 1 start *****/
-/***** D:\wanmi\student\wxshop\node_modules\@wepy\core\dist\wepy.js *****/
+/***** E:\code\shop\wxshop\node_modules\@wepy\core\dist\wepy.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
 // can we use __proto__?
@@ -3519,7 +3519,7 @@ module.exports = wepy;
 
 
 /***** module 2 start *****/
-/***** D:\wanmi\student\wxshop\node_modules\vuex\dist\vuex.common.js *****/
+/***** E:\code\shop\wxshop\node_modules\vuex\dist\vuex.common.js *****/
 function(module, exports, __wepy_require) {/**
  * vuex v3.1.3
  * (c) 2020 Evan You
@@ -4577,7 +4577,7 @@ module.exports = index;
 
 
 /***** module 3 start *****/
-/***** D:\wanmi\student\wxshop\node_modules\@wepy\x\dist\index.js *****/
+/***** E:\code\shop\wxshop\node_modules\@wepy\x\dist\index.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

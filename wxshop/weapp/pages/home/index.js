@@ -29,18 +29,12 @@ _core["default"].page({
     auto: true,
     time: 2000,
     bannerList: [{
-      adv_image: 'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'
+      adv_image: '/static/images/test.jpg'
     }],
     groupBuy: [{
-      adv_image: 'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'
-    }, {
-      adv_image: 'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'
-    }, {
-      adv_image: 'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'
-    }, {
-      adv_image: 'https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E'
+      adv_image: '/static/images/test.jpg'
     }],
-    item: 2,
+    item: 3,
     vertical: true
   },
   computed: {},
@@ -55,6 +49,21 @@ _core["default"].page({
           self.bannerList = response.data.data.banner_list;
           self.$apply();
           console.log(self.bannerList);
+        }
+      })["catch"](function (error) {
+        console.log(error);
+
+        _toast["default"].success('失败文案');
+      });
+    },
+    getGroupToHome: function getGroupToHome() {
+      self.$app.$get('get_group_to_home', {}).then(function (response) {
+        console.log(response);
+
+        if (response.data.code > 0) {
+          console.log(self.data);
+          self.groupBuy = response.data.data.group_list;
+          self.$apply();
         }
       })["catch"](function (error) {
         console.log(error);
@@ -99,6 +108,7 @@ _core["default"].page({
     self = this;
     self.loading();
     self.get_banner();
+    self.getGroupToHome();
   },
   onReady: function onReady() {
     console.log('加载完成');
@@ -106,7 +116,7 @@ _core["default"].page({
       return (0, _toast["default"])('加载完成');
     }, 2000);
   }
-}, {info: {"components":{"i-input":{"path":"./../../vendor/iview/input/index"},"i-card":{"path":"./../../vendor/iview/card/index"},"van-search":{"path":"./../../vendor/vant/search/index"},"van-toast":{"path":"./../../vendor/vant/toast/index"},"van-grid":{"path":"./../../vendor/vant/grid/index"},"van-grid-item":{"path":"./../../vendor/vant/grid-item/index"}},"on":{}}, handlers: {'8-63': {"tap": function proxy () {
+}, {info: {"components":{"van-search":{"path":"./../../vendor/vant/search/index"},"van-toast":{"path":"./../../vendor/vant/toast/index"},"van-grid":{"path":"./../../vendor/vant/grid/index"},"i-input":{"path":"./../../vendor/iview/input/index"},"i-card":{"path":"./../../vendor/iview/card/index"},"gm-goods-group":{"path":"./../../components/goods/goods_group"},"van-grid-item":{"path":"./../../vendor/vant/grid-item/index"}},"on":{}}, handlers: {'8-149': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

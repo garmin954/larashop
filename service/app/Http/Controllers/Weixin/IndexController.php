@@ -6,7 +6,7 @@ use App\Models\Adv;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function getBannerList(Request $request)
     {
