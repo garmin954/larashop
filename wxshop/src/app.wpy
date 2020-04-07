@@ -1,5 +1,4 @@
 <style lang="less">
-
 </style>
 
 <script>
@@ -52,13 +51,48 @@ wepy.app({
 <config>
 {
     pages: [
-      'pages/home/index'
+        'pages/home/index',
+        'pages/mine/index',
+        'pages/cate/index',
+        'pages/card/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/home/index",
+            "text": "首页",
+            "iconPath" : '/static/images/bar/home.png',
+            "selectedIconPath" : '/static/images/bar/home-active.png',
+    
+            }, {
+            "pagePath": "pages/cate/index",
+            "text": "分类",
+            "iconPath" : '/static/images/bar/cate.png',
+            "selectedIconPath" : '/static/images/bar/cate-active.png',
+            },  {
+            "pagePath": "pages/card/index",
+            "text": "购物车",
+            "iconPath" : '/static/images/bar/card.png',
+            "selectedIconPath" : '/static/images/bar/card-active.png',
+            },{
+            "pagePath": "pages/mine/index",
+            "text": "个人中心",
+            "iconPath" : '/static/images/bar/mine.png',
+            "selectedIconPath" : '/static/images/bar/mine-active.png',
+            }
+        ],
+        <!--"selectedColor": "#17233d",-->
+        "selectedColor": "#17233d",
+        "color": "#515a6e",
+    },
+    "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
+    "enablePullDownRefresh": "true",  <!--是否开启当前页面下拉刷新-->
+    "onReachBottomDistance": 50,  <!--页面上拉触底事件触发时距页面底部距离，单位为px。-->
+
     }
-}
 </config>

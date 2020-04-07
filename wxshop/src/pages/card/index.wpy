@@ -1,0 +1,52 @@
+<style lang="less">
+    .card-box{
+        
+        van-card{
+            background: #b1b1b1;
+            margin-bottom: 10rpx;
+        }
+    }
+</style>
+
+<template>
+    <div class="card-box">
+        <van-card
+                v-for="(item, index) in goodsList"
+                num="2"
+                tag="标签"
+                price="10.00"
+                desc="描述信息"
+                title="商品标题"
+                thumb="{{ imageURL }}"
+                :key="index"
+        >
+            
+            <view slot="footer">
+                <van-button size="mini">按钮</van-button>
+                <van-button size="mini">按钮</van-button>
+            </view>
+        </van-card>
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+
+    wepy.page({
+        data:{
+            goodsList: [{},{},{},{}],
+            imageURL:"https://img.yzcdn.cn/vant/ipad.jpeg"
+        }
+    })
+</script>
+
+<config>
+    {
+        navigationBarTitleText: '购物车',
+        usingComponents:{
+            "van-icon": "~@/vendor/vant/icon/index",
+            "van-card": "~@/vendor/vant/card/index",
+            "van-button":　"~@/vendor/vant/button/index",
+        }
+    }
+</config>

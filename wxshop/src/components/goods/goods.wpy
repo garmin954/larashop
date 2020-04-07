@@ -1,0 +1,31 @@
+<style>
+
+</style>
+
+<template>
+    <div>
+        <div class="goods-image">
+            <img :src="goods_image" alt="商品">
+        </div>
+        <div class="goods-info">
+            
+        </div>
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+
+    wepy.page({
+        data:{
+            goods_image : "https://img.yzcdn.cn/vant/ipad.jpeg",
+        }
+    })
+</script>
+
+<config>
+    {
+    usingComponents:{
+        "van-icon": "~@/vendor/vant/icon/index"}
+    }
+</config>

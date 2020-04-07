@@ -1,0 +1,41 @@
+<style>
+
+</style>
+
+<template>
+    <div>
+        <van-sidebar :active-key="activeKey" @change="onChange">
+            <van-sidebar-item title="标签名 1" />
+            <van-sidebar-item title="标签名 2" />
+            <van-sidebar-item title="标签名 3" />
+        </van-sidebar>
+
+        <van-notify id="van-notify" />
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+    import Notify from '@/vendor/vant/notify/notify';
+    wepy.page({
+        data:{
+            activeKey: 0
+        },
+        methods:{
+            onChange(event) {
+                Notify({ type: 'primary', message: event.detail });
+            }
+        }
+    })
+</script>
+
+<config>
+{
+    navigationBarTitleText: '商品分类',
+    usingComponents:{
+        "van-icon": "~@/vendor/vant/icon/index",
+        "van-sidebar": "~@/vendor/vant/sidebar/index",
+        "van-sidebar-item": "~@/vendor/vant/sidebar-item/index",
+    }
+}    
+</config>

@@ -1,0 +1,28 @@
+<style>
+    
+</style>
+
+<template>
+    <div>
+        mine
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+
+    wepy.page({
+        data:{
+            
+        }
+    })
+</script>
+
+<config>
+    {
+        navigationBarTitleText: '个人中心',
+        usingComponents:{
+
+            "van-icon": "~@/vendor/vant/icon/index"}
+        }
+</config>
