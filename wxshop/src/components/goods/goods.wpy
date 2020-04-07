@@ -8,7 +8,7 @@
             <img :src="goods_image" alt="商品">
         </div>
         <div class="goods-info">
-            
+            商品
         </div>
     </div>
 </template>

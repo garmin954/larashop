@@ -125,4 +125,21 @@ class Goods extends Model
         return self::where($this->params)
             ->offset(0)->limit($nums)->orderByRaw('is_top desc ,edit_time desc')->get()->toArray();;
     }
+
+    /**
+     * 正常商品
+     * @param $query
+     * @return mixed
+     */
+    public function scopeNormal($query)
+    {
+        return $query->where($this->params);
+    }
+
+    public function getGoodsToHome($page_index, $page_size=10)
+    {
+        $current = ($page_index-1) * $page_size;
+        return self::normal()->offset($current)->limit($page_size)->get();
+    }
+
 }

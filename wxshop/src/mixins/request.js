@@ -45,7 +45,8 @@ export default {
         })
       })
       return promise
-    }
+    },
+
   },
   created () {
     console.log('http in mixin');

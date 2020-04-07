@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0a7512-5d4a-4723-b827-cc12e1615510" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.wepycache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/.wepyignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/app.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/common/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/common/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/common/request.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/counter.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/group.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/groupitem.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/list.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/panel.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/components/wepy-list.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/mixins/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/pages/home/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/src/pages/home/index.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/src/store/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/static/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/static/less/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/static/less/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/weapp/static/less/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/weapp/static/less/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxshop/wepy.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxshop/wepy.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/wxshop" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -112,69 +89,69 @@
       <path value="$PROJECT_DIR$/service/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/service/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/service/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/service/vendor/mews/captcha" />
-      <path value="$PROJECT_DIR$/service/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/service/vendor/laravel/ui" />
-      <path value="$PROJECT_DIR$/service/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/service/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/service/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/service/vendor/intervention/image" />
-      <path value="$PROJECT_DIR$/service/vendor/symfony/cache" />
-      <path value="$PROJECT_DIR$/service/vendor/symfony/cache-contracts" />
       <path value="$PROJECT_DIR$/service/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/service/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/service/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/service/vendor/symfony/psr-http-message-bridge" />
-      <path value="$PROJECT_DIR$/service/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/service/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/service/vendor/overtrue/easy-sms" />
+      <path value="$PROJECT_DIR$/service/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/service/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/service/vendor/mews/captcha" />
+      <path value="$PROJECT_DIR$/service/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/service/vendor/pimple/pimple" />
       <path value="$PROJECT_DIR$/service/vendor/overtrue/socialite" />
       <path value="$PROJECT_DIR$/service/vendor/overtrue/wechat" />
-      <path value="$PROJECT_DIR$/service/vendor/overtrue/laravel-wechat" />
       <path value="$PROJECT_DIR$/service/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/service/vendor/overtrue/laravel-wechat" />
       <path value="$PROJECT_DIR$/service/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/service/vendor/namshi/jose" />
-      <path value="$PROJECT_DIR$/service/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/service/vendor/lcobucci/jwt" />
-      <path value="$PROJECT_DIR$/service/vendor/yansongda/supports" />
-      <path value="$PROJECT_DIR$/service/vendor/yansongda/pay" />
-      <path value="$PROJECT_DIR$/service/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/service/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/service/vendor/workerman/workerman" />
       <path value="$PROJECT_DIR$/service/vendor/workerman/gateway-worker" />
-      <path value="$PROJECT_DIR$/service/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/service/vendor/facade/ignition-contracts" />
-      <path value="$PROJECT_DIR$/service/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/service/vendor/yansongda/supports" />
+      <path value="$PROJECT_DIR$/service/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/service/vendor/yansongda/pay" />
       <path value="$PROJECT_DIR$/service/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/service/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/service/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/service/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/service/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/service/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/service/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/service/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/service/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/service/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/service/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/service/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/service/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/service/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/service/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/service/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/service/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/service/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/service/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/service/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/service/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/service/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/service/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/service/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/service/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/service/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/service/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/service/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/service/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/service/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/service/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/service/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/service/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/service/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/service/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/service/vendor/phpunit/phpunit" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZZjwuqmQNJ7lkGVG5LsXLflY6d" />
@@ -240,6 +217,7 @@
       <workItem from="1585990780743" duration="20760000" />
       <workItem from="1586070665857" duration="5610000" />
       <workItem from="1586090183091" duration="27087000" />
+      <workItem from="1586264815880" duration="7479000" />
     </task>
     <servers />
   </component>
@@ -271,10 +249,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1586174697434" />
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586090187166">
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586264815898">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586090187166" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586264815898" />
     <state x="290" y="64" width="786" height="600" key="find.popup" timestamp="1586184640194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -26,15 +26,21 @@
             justify-content: space-between;
 
             .goods_price{
-                font-size: 30rpx;
+                font-size: 25rpx;
                 color: #ff634c;
                 font-weight: bold;
 
+                view{
+                    float: left;
+                    font-size: 20rpx;
+                    line-height: 38rpx;
+                }
             }
 
             .group_name{
-                font-size: 23rpx;
+                font-size: 18rpx;
                 color: #ff634c;
+                line-height: 35rpx;
             }
         }
     }
@@ -46,7 +52,7 @@
         <image :src="goods.goods_images" :alt="goods.goods_name"></image>
         <div class="goods-name">{{goods.goods_name}}</div>
         <div class="goods-foot">
-            <span class="goods_price">￥{{goods.groupbuy_price}}</span>
+            <span class="goods_price"><i>￥</i>{{goods.groupbuy_price}}</span>
             <span class="group_name">{{goods.groupbuy_num}}人团</span>
         </div>
     </div>
