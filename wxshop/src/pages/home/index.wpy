@@ -241,6 +241,9 @@
         "van-grid": "~@/vendor/vant/grid/index",
         "van-grid-item" : "~@/vendor/vant/grid-item",
         "gm-goods-group" : "~@/components/goods/goods_group",
-    }
+    },
+    "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
+    "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->
+    "onReachBottomDistance": 50,  <!--页面上拉触底事件触发时距页面底部距离，单位为px。-->
 }
 </config>
