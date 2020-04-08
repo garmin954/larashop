@@ -136,10 +136,21 @@ class Goods extends Model
         return $query->where($this->params);
     }
 
+    /**
+     * 获取首页产品
+     * @param $page_index
+     * @param int $page_size
+     * @return mixed
+     */
     public function getGoodsToHome($page_index, $page_size=10)
     {
         $current = ($page_index-1) * $page_size;
         return self::normal()->offset($current)->limit($page_size)->get();
+    }
+
+    public function getGoodsCountToHome()
+    {
+        return self::normal()->count();
     }
 
 }

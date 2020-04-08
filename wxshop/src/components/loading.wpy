@@ -1,0 +1,64 @@
+<style>
+
+</style>
+
+<template>
+    <div class="body-container">
+        <van-divider contentPosition="center">
+            <van-loading size="24px">加载中</van-loading>
+        </van-divider>
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+
+    wepy.page({
+        data:{
+            
+        },
+        
+        props:{
+            // 请求地址
+            url:{
+                type: String,
+                default: '',
+            },
+            // 当前页
+            page:{
+                type: Number,
+                default: 1,
+            },
+            // 总共页面
+            totalPage:{
+                type: Number,
+                default: 1,
+            }
+            
+        },
+        methods:{
+            getItemMore(){
+                
+            }  
+        },
+
+        onReachBottom: function () {
+            console.log("页面上拉触底事件的处理函数222222222222")
+            // self.$refs.loading.getItemMore();
+            // self.page++;
+            // self.getGoodsList();
+        }
+    })
+</script>
+
+<config>
+{
+    navigationBarTitleText: '加载',
+    usingComponents:{
+        "van-loading": "~@/vendor/vant/loading/index",
+        "van-icon": "~@/vendor/vant/icon/index",
+        "van-divider": "~@/vendor/vant/divider/index",
+    },
+    "onReachBottomDistance": 50,  <!--页面上拉触底事件触发时距页面底部距离，单位为px。-->
+}
+</config>

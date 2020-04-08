@@ -104,12 +104,15 @@
         </swiper>
     </div>  
 
-<!--    商品列表  -->
+    <!--商品列表  -->
     <div class="goods-list-box body-container">
         <gm-goods v-for="(goods, index) in goodsList" :key="index"></gm-goods>
     </div>
-    <van-toast id="van-toast"/>
-<!--    <van-toast id="custom-selector"></van-toast>-->
+      
+    <!--加载-->
+    <gm-loading ref="loadings" ></gm-loading>
+    <!--<van-toast v-if="getMore" id="van-toast"/>-->
+    <van-toast id="custom-selector"></van-toast>
   </div>
 
 </template>
@@ -149,6 +152,8 @@
       vertical: true ,
       page: 1,
       goodsList:[],
+      getMore:true, // 加载更多
+      totalPage: 5, // 总共页数  
     },
 
     computed: {
@@ -156,6 +161,7 @@
 
     methods: {
       getBanner(){
+          // console.log(self);
           return  self.$app.$get('get_banner', {});
       },
       getGroupToHome(){
@@ -163,6 +169,18 @@
       },
       getGoodsList(){
           return self.$app.$get('get_goods_list', {page: self.page});
+
+          // if (self.page == 1) {
+          //     return self.$app.$get('get_goods_list', {page: self.page});
+          // } else{
+          //     self.$app.$get('get_goods_list', {page: self.page}).then(response=>{
+          //         if (response.data.code > 0){
+          //             self.goodsList = self.goodsList.concat(response.data.data.goods_list);
+          //             // console.log(self.goodsList);
+          //             // self.$apply();
+          //         } 
+          //     })
+          // }
       },
       initDatas() {
           let banner = self.getBanner();
@@ -180,13 +198,12 @@
               }
 
               if (group_res.data.code > 0) {
-                  // console.log(self.data);
                   self.groupBuy = group_res.data.data.group_list
               }
 
               if (goods_list_res.data.code > 0) {
-                  // console.log(self.data);
-                  self.goodsList = goods_list_res.data.data.goods_list
+                  self.goodsList = goods_list_res.data.data.goods_list;
+                  self.totalPage = goods_list_res.data.data.goods_count;
               }
 
               console.log(self.goodsList);
@@ -247,6 +264,12 @@
       // 上拉
       onReachBottom: function () {
           console.log("页面上拉触底事件的处理函数")
+          console.log(self)
+          console.log(self.$refs)
+          console.log(self.$refs.loadings.getItemMore());
+          // self.$refs.loading.getItemMore();
+          // self.page++;
+          // self.getGoodsList();
       }
   })
 </script>
@@ -262,7 +285,8 @@
         "van-grid-item" : "~@/vendor/vant/grid-item",
         "gm-goods-group" : "~@/components/goods/goods_group",
         "gm-goods" : "~@/components/goods/goods",
-
+        "gm-loading" : "~@/components/loading",
+        "van-loading": "~@/vendor/vant/loading/index"
     },
     "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
     "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->
