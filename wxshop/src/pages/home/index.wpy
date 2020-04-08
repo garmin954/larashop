@@ -110,7 +110,10 @@
     </div>
       
     <!--加载-->
-    <gm-loading ref="loadings" ></gm-loading>
+    <gm-loading
+            ref="loadings"
+            :page="page"
+    ></gm-loading>
     <!--<van-toast v-if="getMore" id="van-toast"/>-->
     <van-toast id="custom-selector"></van-toast>
   </div>
@@ -266,10 +269,20 @@
           console.log("页面上拉触底事件的处理函数")
           console.log(self)
           console.log(self.$refs)
-          console.log(self.$refs.loadings.getItemMore());
+          console.log("页面上拉触底事件的处理函数2133333333")
+          console.log(self.$children);
+          this.$children.filter((com) => {
+              console.log(com.$is);
+          });
+          // console.log(self.$refs.loadings.getItemMore());
           // self.$refs.loading.getItemMore();
           // self.page++;
           // self.getGoodsList();
+
+          // let promise = this.$invoke('gm-loading', 'getItemMore', {
+          //     title: '自定义标题',
+          //     img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
+          // })
       }
   })
 </script>

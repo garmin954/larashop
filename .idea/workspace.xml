@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0a7512-5d4a-4723-b827-cc12e1615510" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +163,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/wxshop/src/vendor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wepycs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -217,7 +216,7 @@
       <workItem from="1585990780743" duration="20760000" />
       <workItem from="1586070665857" duration="5610000" />
       <workItem from="1586090183091" duration="27087000" />
-      <workItem from="1586264815880" duration="7479000" />
+      <workItem from="1586264815880" duration="14560000" />
     </task>
     <servers />
   </component>
@@ -229,10 +228,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="431" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1586100679713" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1585838653014">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1586356986615">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585838653014" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586356986615" />
     <state x="423" y="177" key="NewPhpClassDialog" timestamp="1586183187394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -253,6 +252,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586264815898" />
+    <state x="357" y="0" width="900" height="684" key="dock-window-1" timestamp="1586357248387">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="357" y="0" width="900" height="684" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1586357248387" />
     <state x="290" y="64" width="786" height="600" key="find.popup" timestamp="1586184640194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

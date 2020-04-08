@@ -13,7 +13,7 @@
 <script>
     import wepy from '@wepy/core'
 
-    wepy.page({
+    wepy.component({
         data:{
             
         },
@@ -22,6 +22,9 @@
             // 请求地址
             url:{
                 type: String,
+                coerce: function (v) {
+                    return +v
+                },
                 default: '',
             },
             // 当前页
@@ -38,8 +41,9 @@
         },
         methods:{
             getItemMore(){
-                
-            }  
+                console.log("页面上拉触底事件的处理函数222222222222")
+
+            }
         },
 
         onReachBottom: function () {
