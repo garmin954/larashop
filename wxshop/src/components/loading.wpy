@@ -1,13 +1,19 @@
 <style>
 
+    .loading-box{
+        text-align: center;
+        font-size: 25rpx;
+        color: lightgrey;
+        margin-bottom: 20rpx;
+    }
 </style>
 
 <template>
-    <div class="body-container">
-        <van-divider contentPosition="center">
-            <view v-if="gone"> 碰到我的底线了</view>
-            <van-loading v-else  size="24px">加载中</van-loading>
-        </van-divider>
+    <div class="loading-box body-container">
+<!--        <van-divider contentPosition="center">-->
+            <view v-if="gone"> --碰到我的底线了--</view>
+            <van-loading v-else  size="24px" customStyle="font-size:18rpx">加载中...</van-loading>
+<!--        </van-divider>-->
     </div>
 </template>
 
@@ -58,14 +64,18 @@
         },
         methods:{
             getItemMore(){
-                if (self.implement || self.gone){
-                    return false;
-                }
 
-                self.implement = true;
-                
-                self.params.page = self.currentPage;
                 let promise = new Promise((resolve, reject) => {
+
+                    if (self.implement || self.gone){
+                        reject(error)
+                        // return false;
+                    }
+
+                    self.implement = true;
+
+                    self.params.page = self.currentPage;
+
                     self.$app.$post(self.url, self.params).then(response=>{
                         self.totalPage = response.data.data.total;
                         self.implement = false;

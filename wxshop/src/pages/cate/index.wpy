@@ -1,11 +1,13 @@
 <style>
+    .cate_menu{
 
+    }
 </style>
 
 <template>
     <div>
-        <div style="width: 20%;float: left">
-            <div style="position: fixed">
+        <div style="width: 25%;float: left;overflow:hidden;">
+            <div style="">
             <van-sidebar :active-key="activeKey" @change="onChange">
                 <van-sidebar-item title="男装" />
                 <van-sidebar-item title="女装" />
@@ -13,12 +15,13 @@
             </van-sidebar>
             </div>
         </div>
-        <div style="width: 80%;float: right;padding: 10rpx;box-sizing: content-box">
+        <div style="width: 72%;float: right;padding: 10rpx;box-sizing: content-box">
             <!--商品列表  -->
             <div class="goods-list-box body-container">
                 <gm-goods v-for="(goods, index) in goodsList"
                           :key="index"
-                          :index="index"
+                          :goods="goods"
+                          height="320"
                 ></gm-goods>
             </div>
             

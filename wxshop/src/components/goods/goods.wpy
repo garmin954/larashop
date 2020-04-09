@@ -5,13 +5,14 @@
     }
     .goods-item{
         .goods-item();
-        
-        image{
-            width: 100%;
-            height: 280rpx;
-            display: block;
-            border: 0;
-        }
+
+            image{
+
+                width: 100%;
+                display: block;
+                border: 0;
+            }
+
         
         .h1 {
             overflow: hidden;
@@ -20,19 +21,22 @@
             -webkit-box-orient: vertical;
             word-break: break-all;
             text-overflow: ellipsis;
-            font-size: 0.75rem;
+            font-size: 0.6rem;
             font-weight: normal;
             margin-bottom: 0.5rem;
+            margin-top: 20rpx;
         }
         
         .h2 {
             color: #f34b25;
-            font-size: 0.8rem;
+            font-size: 0.6rem;
             font-weight: normal;
             width: 100%;
             position: relative;
 
             .em {
+                font-size: 0.5rem;
+
                 display: inline-block;
                 color: #bdbdbd;
                 font-style: normal;
@@ -58,13 +62,12 @@
 </style>
 
 <template>
-    <div class="goods-item">
-        <image :src="goods_image" alt="" />
-        
-        <h1 class="h1">美菱(MeiLing)电火锅家用 多功能电炒锅 电热炒煮蒸煎涮炖焖一体锅 麦饭石色不粘锅 学生宿舍小电锅MTA-5-30</h1>
+    <div class="goods-item" :style="{height: height+'rpx'}">
+        <image :style="{height: height-120+'rpx'}" :src="goods.goods_images" alt="" />
+        <h1 class="h1">{{goods.goods_name}}</h1>
         <h2 class="h2">
-            ￥199 
-            <em class="em">￥399</em>
+            ￥{{goods.goods_price}}
+            <em class="em">￥{{goods.goods_market_price}}</em>
             <van-icon name="cart" color="#ffffff" />
         </h2>
 
@@ -74,26 +77,21 @@
 <script>
     import wepy from '@wepy/core'
 
-    wepy.page({
+    wepy.component({
         props:{
-            index:{
+            height:{
                 type:Number,
-                default:0
+                default:380,
+            },
+            goods:{
+                type:Object,
+                default:{},
             }
         },
+
         data:{
             goods_image : "https://img.yzcdn.cn/vant/ipad.jpeg",
-            margins:'0 0 2% 0'
-        },
-        watch:{
-            index(nval, oval){
-                console.log(nval % 2);
-                if (nval%2 == 0){
-                    this.margins = '0 0 2% 2%'
-                }
-                // console.log('marginsmarginsmargins');
-                // console.log(this.margins);
-            }
+            imageHeight:0,
         }
     })
 </script>

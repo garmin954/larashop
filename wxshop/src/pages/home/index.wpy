@@ -106,7 +106,8 @@
     <div class="goods-list-box body-container">
         <gm-goods v-for="(goods, index) in goodsList" 
                   :key="index"
-                  :index="index"
+                  height="450"
+                  :goods="goods"
         ></gm-goods>
     </div>
       
