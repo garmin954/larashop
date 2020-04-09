@@ -1,4 +1,10 @@
 <style lang="less">
+    @import "~STATIC/less/index.less"; // library.less
+
+    page{
+        background: #f4f4f4;
+        color: #666;
+    }
 </style>
 
 <script>

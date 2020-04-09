@@ -1,5 +1,10 @@
 @container : 95%;
 
+page{
+  background: #f4f4f4;
+  color: #666;
+}
+
 .body-container{
   width: @container;
   margin: 20rpx auto;
@@ -19,3 +24,28 @@
   background: -ms-linear-gradient(top, #515a6e 0%,#17233d 100%);
   background: linear-gradient(to bottom, #515a6e 0%,#17233d 100%);
 }
+
+.goods-list-box {
+  overflow: hidden;
+  height:auto;
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+gm-goods{
+  .radius-shadow();
+  margin: 0 0% 2% 0;
+  width: 41.8%;
+  background: white;
+  padding: 0.8rem;
+}
+.goods-item{
+  width: 100%;
+  //float: left;
+}
+
+
+ 
+
+ 

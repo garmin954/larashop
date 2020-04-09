@@ -1,15 +1,73 @@
-<style>
+<style lang="less">
+    @import "~STATIC/less/index.less"; // library.less
+    .goods-item:nth-child(2n){
+        margin-right: 0%;
+    }
+    .goods-item{
+        .goods-item();
+        
+        image{
+            width: 100%;
+            height: 280rpx;
+            display: block;
+            border: 0;
+        }
+        
+        .h1 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            font-size: 0.75rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+        
+        .h2 {
+            color: #f34b25;
+            font-size: 0.8rem;
+            font-weight: normal;
+            width: 100%;
+            position: relative;
 
+            .em {
+                display: inline-block;
+                color: #bdbdbd;
+                font-style: normal;
+                text-decoration: line-through;
+            }
+        }
+
+        van-icon {
+            font-size: 28rpx;
+            position: absolute;
+            right: 0;
+            top: -2px;
+            background: #f34b25;
+            border-radius: 50%;
+            padding: 10rpx;
+            box-sizing: content-box;
+        }
+    }
+
+    /*.goods-item:nth-child(2n){*/
+        /*margin-left: 0%;*/
+    /*}*/
 </style>
 
 <template>
-    <div>
-        <div class="goods-image">
-            <img :src="goods_image" alt="商品">
-        </div>
-        <div class="goods-info">
-            商品
-        </div>
+    <div class="goods-item">
+        <image :src="goods_image" alt="" />
+        
+        <h1 class="h1">美菱(MeiLing)电火锅家用 多功能电炒锅 电热炒煮蒸煎涮炖焖一体锅 麦饭石色不粘锅 学生宿舍小电锅MTA-5-30</h1>
+        <h2 class="h2">
+            ￥199 
+            <em class="em">￥399</em>
+            <van-icon name="cart" color="#ffffff" />
+        </h2>
+
     </div>
 </template>
 
@@ -17,15 +75,33 @@
     import wepy from '@wepy/core'
 
     wepy.page({
+        props:{
+            index:{
+                type:Number,
+                default:0
+            }
+        },
         data:{
             goods_image : "https://img.yzcdn.cn/vant/ipad.jpeg",
+            margins:'0 0 2% 0'
+        },
+        watch:{
+            index(nval, oval){
+                console.log(nval % 2);
+                if (nval%2 == 0){
+                    this.margins = '0 0 2% 2%'
+                }
+                // console.log('marginsmarginsmargins');
+                // console.log(this.margins);
+            }
         }
     })
 </script>
 
 <config>
     {
-    usingComponents:{
-        "van-icon": "~@/vendor/vant/icon/index"}
+        usingComponents:{
+            "van-icon": "~@/vendor/vant/icon/index",
+        }
     }
 </config>

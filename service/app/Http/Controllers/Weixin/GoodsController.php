@@ -25,8 +25,8 @@ class GoodsController extends BaseController
         $goodsModel = new Goods();
         $page_index = $request->post('page', 1);
         $goods_list = $goodsModel->getGoodsToHome($page_index, 10);
-        $goods_count = $goodsModel->getGoodsCountToHome();
-
-        return $this->responseData('', 1, compact('goods_list', 'goods_count'));
+        $total = $goodsModel->getGoodsCountToHome();
+        $total = 3;
+        return $this->responseData('', 1, compact('goods_list', 'total'));
     }
 }

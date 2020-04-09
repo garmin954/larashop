@@ -56,9 +56,7 @@
       }
   }
 
-    .goods-list-box{
-        margin-top: 20rpx;
-    }
+   
 </style>
 
 <template>
@@ -106,13 +104,17 @@
 
     <!--商品列表  -->
     <div class="goods-list-box body-container">
-        <gm-goods v-for="(goods, index) in goodsList" :key="index"></gm-goods>
+        <gm-goods v-for="(goods, index) in goodsList" 
+                  :key="index"
+                  :index="index"
+        ></gm-goods>
     </div>
       
     <!--加载-->
     <gm-loading
             ref="loadings"
             :page="page"
+            url="get_goods_list"
     ></gm-loading>
     <!--<van-toast v-if="getMore" id="van-toast"/>-->
     <van-toast id="custom-selector"></van-toast>
@@ -175,14 +177,6 @@
 
           // if (self.page == 1) {
           //     return self.$app.$get('get_goods_list', {page: self.page});
-          // } else{
-          //     self.$app.$get('get_goods_list', {page: self.page}).then(response=>{
-          //         if (response.data.code > 0){
-          //             self.goodsList = self.goodsList.concat(response.data.data.goods_list);
-          //             // console.log(self.goodsList);
-          //             // self.$apply();
-          //         } 
-          //     })
           // }
       },
       initDatas() {
@@ -266,23 +260,13 @@
 
       // 上拉
       onReachBottom: function () {
-          console.log("页面上拉触底事件的处理函数")
-          console.log(self)
-          console.log(self.$refs)
-          console.log("页面上拉触底事件的处理函数2133333333")
-          console.log(self.$children);
-          this.$children.filter((com) => {
-              console.log(com.$is);
-          });
-          // console.log(self.$refs.loadings.getItemMore());
-          // self.$refs.loading.getItemMore();
-          // self.page++;
-          // self.getGoodsList();
-
-          // let promise = this.$invoke('gm-loading', 'getItemMore', {
-          //     title: '自定义标题',
-          //     img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
-          // })
+          self.$refs.loadings.getItemMore().then(response=>{
+              if (response.data.code > 0){
+                  self.goodsList = self.goodsList.concat(response.data.data.goods_list);
+              }
+          }).catch(error=>{
+              
+          })
       }
   })
 </script>
