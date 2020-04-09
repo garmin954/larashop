@@ -1,4 +1,4 @@
-export const baseUrl="http://api.shop.org/api/";
+export const baseUrl="http://api.jietuma.com/api/";
 // export const baseUrl="http://api.qingwuit.com/api/";
 export const api = {
     "checkUserLogin" : baseUrl + "Admin/check_user_login", // 验证是否已经登录

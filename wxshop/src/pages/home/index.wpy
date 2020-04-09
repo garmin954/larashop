@@ -65,6 +65,7 @@
       <van-search
         value="{{ value }}"
         placeholder="请输入搜索关键词"
+        shape="round"
         use-action-slot
         :change="onChange"
         :search="onSearch"
@@ -84,8 +85,18 @@
     <!--菜单  -->
     <div class="menu-box body-container">
       <van-grid square>
-        <van-grid-item icon="photo-o" text="文字"  />
+          <van-grid-item icon="photo-o" text="团购"  />
+          <van-grid-item icon="photo-o" text="秒杀"  />
+          <van-grid-item icon="photo-o" text="优惠券"  />
+          <van-grid-item icon="photo-o" text="积分商城"  />
+          <van-grid-item icon="photo-o" text="购物车"  />
+          <van-grid-item icon="photo-o" text="分类"  />
+          <van-grid-item icon="photo-o" text="品牌"  />
+          <van-grid-item icon="photo-o" text="购物车"  />
+
       </van-grid>
+
+
     </div>
       
     <!--拼团  -->

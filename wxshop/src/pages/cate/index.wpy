@@ -21,6 +21,7 @@
                 <gm-goods v-for="(goods, index) in goodsList"
                           :key="index"
                           :goods="goods"
+                          :showOrigin="false"
                           height="320"
                 ></gm-goods>
             </div>
