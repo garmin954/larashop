@@ -10,22 +10,21 @@
 
 <template>
     <div class="card-box">
-        <van-card
-                v-for="(item, index) in goodsList"
-                num="2"
-                tag="标签"
-                price="10.00"
-                desc="描述信息"
-                title="商品标题"
-                thumb="{{ imageURL }}"
-                :key="index"
-        >
-            
-            <view slot="footer">
-                <van-button size="mini">按钮</van-button>
-                <van-button size="mini">按钮</van-button>
-            </view>
-        </van-card>
+<!--        <van-card-->
+<!--                v-for="(item, index) in goodsList"-->
+<!--                num="2"-->
+<!--                tag="标签"-->
+<!--                price="10.00"-->
+<!--                desc="描述信息"-->
+<!--                title="商品标题"-->
+<!--                thumb="{{ imageURL }}"-->
+<!--                :key="index"-->
+<!--        >-->
+<!--            <view slot="footer">-->
+<!--                <van-button size="mini">按钮</van-button>-->
+<!--                <van-button size="mini">按钮</van-button>-->
+<!--            </view>-->
+<!--        </van-card>-->
 
         <gm-abnormal type="sd"></gm-abnormal>
     </div>

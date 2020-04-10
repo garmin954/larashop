@@ -57,10 +57,12 @@ wepy.app({
 <config>
 {
     pages: [
-        'pages/home/index',
-        'pages/mine/index',
-        'pages/cate/index',
-        'pages/card/index',
+        'pages/home/index',  <!-- 首页 -->
+        'pages/mine/index',  <!-- 个人中心 -->
+        'pages/cate/index',  <!-- 商品分类 -->
+        'pages/card/index',  <!-- 购物车 -->
+        'pages/other/search',  <!-- 搜索 -->
+
     ],
     window: {
       backgroundTextStyle: 'light',

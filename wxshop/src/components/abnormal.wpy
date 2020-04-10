@@ -21,8 +21,8 @@
             font-size: 14px;
             
             .icon{
-                font-size: 5rem;
-                color: violet;
+                font-size: 6rem;
+                color: lightgray;
             }
         }
     }

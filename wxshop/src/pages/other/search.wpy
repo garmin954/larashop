@@ -1,0 +1,140 @@
+<style lang="less">
+    @import "~STATIC/less/index.less"; // library.less
+
+    .search-history{
+
+        .van-cell{
+            background: #f4f4f4;
+        }
+
+        van-tag{
+            margin: 15rpx;
+        }
+        .van-icon{
+            margin-left: 10rpx;
+            margin-top: 12rpx;
+        }
+
+        .tag-item-box{
+            .van-icon{
+                margin-left: 10rpx;
+                margin-top: 2rpx;
+            }
+            van-tag{
+                line-height: 75rpx;
+
+            }
+        }
+        .del-all{
+            font-size: 25rpx;
+            display: inline-block;
+            margin-right: 20rpx;
+        }
+
+        .over{
+            font-size: 25rpx;
+            color: #ff241a;
+            display: inline-block;
+            margin-left: 20rpx;
+        }
+        .middle{
+            display: inline-block;
+            width: 1rpx;
+            border: 1rpx solid gray;
+        }
+    }
+</style>
+
+<template>
+
+    <div>
+        <div class="gamin-search">
+            <van-search
+                    :value="searchVal"
+                    placeholder="请输入搜索关键词"
+                    shape="round"
+                    use-action-slot
+                    @cancel="openHistory=true"
+            >
+                <view slot="action" @tap="onClickSearch">搜索</view>
+            </van-search>
+        </div>
+
+        <div v-if="openHistory" class="search-history">
+            <van-cell title="搜索历史">
+                <van-icon v-if="!isDel" name="delete" @tap="isDel=true" />
+                <div v-else>
+                    <div class="del-all" @tap="historyTag=[]">全部删除</div>
+                    <div class="middle"></div>
+                    <div class="over" @tap="isDel=false">完成</div>
+                </div>
+            </van-cell>
+            <div class="tag-item-box body-container">
+
+                <van-tag size="large" @tap="onClickTag(index)"  round v-for="(tag, index) in historyTag">
+                    {{tag}}
+                        <van-icon  v-if="isDel" name="cross" />
+                </van-tag>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+
+    var self;
+    wepy.page({
+        data:{
+            historyTag:[
+                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子'
+                ],
+            isDel: false,
+            openHistory: true,
+            searchVal:'',
+        },
+        methods:{
+            // 点击标签
+            onClickTag(index){
+                console.log('self.searchVal');
+                if (self.isDel){
+                    self.historyTag.splice(index, 1)
+                }else{
+                    self.searchVal = self.historyTag[index]
+                    self.onClickSearch();
+                }
+            },
+
+            // 点击搜索
+            onClickSearch(){
+                self.openHistory = false;
+            }
+        },
+
+        onLoad(query) {
+            self = this;
+        }
+    })
+</script>
+
+<config>
+    {
+    navigationBarTitleText: "搜索商品",
+    usingComponents: {
+        "van-search": "~@/vendor/vant/search/index",
+        "van-toast": "~@/vendor/vant/toast/index",
+        "gm-goods-group" : "~@/components/goods/goods_group",
+        "gm-goods" : "~@/components/goods/goods",
+        "gm-loading" : "~@/components/loading",
+        "van-loading": "~@/vendor/vant/loading/index",
+        "van-tag": "~@/vendor/vant/tag/index",
+        "van-icon": "~@/vendor/vant/icon/index",
+        "van-cell": "~@/vendor/vant/cell/index",
+        "van-cell-group": "~@/vendor/vant/cell-group/index"
+    },
+    "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
+    "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->
+    "onReachBottomDistance": 50,  <!--页面上拉触底事件触发时距页面底部距离，单位为px。-->
+    }
+</config>

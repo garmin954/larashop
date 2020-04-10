@@ -63,14 +63,11 @@
   <div class="container">
     <div class="gamin-search">
       <van-search
-        value="{{ value }}"
         placeholder="请输入搜索关键词"
         shape="round"
         use-action-slot
-        :change="onChange"
-        :search="onSearch"
+        @tap="onSearch"
       >
-        <view slot="action" @tap="onClick">搜索</view>
       </van-search>
     </div>
 
@@ -155,7 +152,6 @@
       }
     },
     data: {
-      value: "搜索",
       auto: true,
       time: 2000,
       bannerList: [
@@ -221,26 +217,10 @@
               console.log(error)
           })
       },
-      onChange(e) {
-        this.value = e.detail
-
-      },
-      onSearch() {
-        console.log('sd京拉');
-        // Toast.success('成功文案');
-        Toast.loading({
-          mask: true,
-          message: '加载中...'
-        });
-      },
-      onClick() {
-        console.log('京拉');
-        // Toast.success('成功文案');
-        Toast.loading({
-          mask: true,
-          message: '加载中...'
-        });
-
+      onSearch(e) {
+        self.$navigate({
+            url: '/pages/other/search'
+        })
       },
       loadings(){
           Toast.loading({
