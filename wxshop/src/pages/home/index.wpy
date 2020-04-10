@@ -128,7 +128,7 @@
             :page="page"
             url="get_goods_list"
     ></gm-loading>
-    <!--<van-toast v-if="getMore" id="van-toast"/>-->
+    <van-toast v-if="getMore" id="van-toast"/>
     <van-toast id="custom-selector"></van-toast>
   </div>
 
@@ -215,8 +215,7 @@
                   self.totalPage = goods_list_res.data.data.goods_count;
               }
 
-              console.log(self.goodsList);
-              setTimeout(res => Toast('加载完成'), 2000);
+              Toast('加载完成');
 
           }).catch((error) => {
               console.log(error)
@@ -243,8 +242,8 @@
         });
 
       },
-      loading(){
-        Toast.loading({
+      loadings(){
+          Toast.loading({
           mask: true,
           message: '加载中...',
           duration:0
@@ -261,7 +260,7 @@
     },
     onLoad(){
       self = this
-      self.loading();
+      self.loadings();
       self.initDatas();
     },
     onReady(){

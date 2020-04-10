@@ -223,3 +223,4 @@ function quick_sort($data)
 }
 
 //1.编写一个PHP函数，求任意n个正负整数里面最大的连续和，要求算法时间复杂度尽可能低。
+Route::get('/test', 'Weixin\GoodsController@getGoodsClass');

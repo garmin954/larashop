@@ -26,6 +26,8 @@
                 <van-button size="mini">按钮</van-button>
             </view>
         </van-card>
+
+        <gm-abnormal type="sd"></gm-abnormal>
     </div>
 </template>
 
@@ -34,7 +36,7 @@
 
     wepy.page({
         data:{
-            goodsList: [{},{},{},{}],
+            goodsList: [{},{}],
             imageURL:"https://img.yzcdn.cn/vant/ipad.jpeg"
         }
     })
@@ -47,6 +49,7 @@
             "van-icon": "~@/vendor/vant/icon/index",
             "van-card": "~@/vendor/vant/card/index",
             "van-button":　"~@/vendor/vant/button/index",
+            "gm-abnormal" : "~@/components/abnormal"
         }
     }
 </config>

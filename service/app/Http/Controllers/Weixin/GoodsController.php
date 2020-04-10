@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Weixin;
 
 use App\Models\Goods;
+use App\Models\GoodsClass;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +21,11 @@ class GoodsController extends BaseController
     }
 
 
+    /**
+     * 获取商品
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getGoodsToHome(Request $request)
     {
         $goodsModel = new Goods();
@@ -28,5 +34,16 @@ class GoodsController extends BaseController
         $total = $goodsModel->getGoodsCountToHome();
         $total = 3;
         return $this->responseData('', 1, compact('goods_list', 'total'));
+    }
+    
+    
+    public function getGoodsClass(Request $request)
+    {
+        $pid = $request->post('pid', 0);
+        $goodsClassModel = new GoodsClass();
+
+        $cate_list = $goodsClassModel->get_goods_class_list();
+        
+        return $this->responseData('', 1, compact('cate_list'));
     }
 }
