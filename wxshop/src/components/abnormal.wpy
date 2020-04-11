@@ -1,0 +1,77 @@
+<style lang="less">
+    @import "~STATIC/less/index.less";
+    
+    .aui-flex-title{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 15px;
+        position: relative;
+        margin-top: 20%;
+        background: white;
+        text-align: center;
+
+        .aui-flex-box{
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            min-width: 0;
+            font-size: 14px;
+            
+            .icon{
+                font-size: 10rem;
+                color: @dcolor;
+            }
+            .title{
+                position: relative;
+                top: -75rpx;
+                font-weight: bold;
+            }
+        }
+    }
+</style>
+
+<template>
+    <div class="aui-flex aui-flex-title" style="background:none">
+        <div class="aui-flex-box">
+            <i v-if="type == 'no_data'" class="icon icon-empty"></i>
+            <i v-if="type == 'card'" class="icon icon-empty-card"></i>
+
+            <text class="title">{{ titleRes}}</text>
+        </div>
+    </div>
+</template>
+
+<script>
+    import wepy from '@wepy/core';
+
+    wepy.component({
+        props:{
+            type:{
+                type:String,
+                default:'no_data'
+            },
+            title:{
+                type:String,
+                default:''
+            },
+        },
+        data:{
+            titles:{
+                'no_data': '没有数据',
+                'card': '没有商品',
+
+            },
+            
+        },
+        computed:{
+            titleRes(){
+                return this.title == '' ? this.titles[this.type] : this.title
+            }
+        }
+
+    })
+</script>

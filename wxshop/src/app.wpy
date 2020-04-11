@@ -31,7 +31,6 @@ wepy.app({
     userInfo: null
   },
   onLaunch() {
-    this.testAsync();
     eventHub.$on('app-launch', (...args) => {
       console.log('app-launch event emitted, the params are:');
       console.log(args);
@@ -39,28 +38,18 @@ wepy.app({
   },
   methods: {
 
-    sleep (s) {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve('promise resolved')
-        }, s * 1000)
-      })
-    },
-
-    async testAsync () {
-      let d = await this.sleep(3);
-      console.log(d);
-    }
   },
 });
 </script>
 <config>
 {
     pages: [
-        'pages/home/index',
-        'pages/mine/index',
-        'pages/cate/index',
-        'pages/card/index',
+        'pages/home/index',  <!-- 首页 -->
+        'pages/mine/index',  <!-- 个人中心 -->
+        'pages/cate/index',  <!-- 商品分类 -->
+        'pages/card/index',  <!-- 购物车 -->
+        'pages/other/search',  <!-- 搜索 -->
+        'pages/other/login',  <!-- 登录 -->
     ],
     window: {
       backgroundTextStyle: 'light',

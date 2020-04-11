@@ -1,48 +1,81 @@
-<style>
-    .cate_menu{
+<style lang="less">
+    .menu-list-box{
+        position: relative;
+        width: 25%;
+        float: left;
+        overflow:hidden;
 
+        .menu-list{
+            position:fixed;
+            left: 0;
+            right: 0;
+        }
+    }
+    .sub-menu-list{
+        width: 72%;
+        float: right;
+        padding: 10rpx;
+        box-sizing: content-box
+    }
+    .van-grid{
+        padding-left: 0px;
     }
 </style>
 
 <template>
-    <div>
-        <div style="width: 25%;float: left;overflow:hidden;">
-            <div style="">
-            <van-sidebar :active-key="activeKey" @change="onChange">
-                <van-sidebar-item title="男装" />
-                <van-sidebar-item title="女装" />
-                <van-sidebar-item title="手机" />
-            </van-sidebar>
+    <div >
+        <div v-if="showLoading">
+            <div  class="menu-list-box" >
+                <div class="menu-list">
+                    <van-sidebar>
+                        <van-sidebar-item 
+                                v-for="(clas, index) in goodsClassList" 
+                                :key="index"
+                                :title="clas.tags"
+                                @tap="onChangeMenu(clas.id)"
+                        />
+                    </van-sidebar>
+                </div>
             </div>
-        </div>
-        <div style="width: 72%;float: right;padding: 10rpx;box-sizing: content-box">
-            <!--商品列表  -->
-            <div class="goods-list-box body-container">
-                <gm-goods v-for="(goods, index) in goodsList"
-                          :key="index"
-                          :goods="goods"
-                          height="320"
-                ></gm-goods>
-            </div>
-            
+            <div class="sub-menu-list" >
+                <!--子分类-->
+                <van-grid column-num="3" gutter="10">
+                    <van-grid-item use-slot  v-for="(son, index) in sonClassList" >
+                        <image style="width: 100%; height: 90rpx;"
+                                src="https://img.yzcdn.cn/vant/apple-1.jpg"
+                        />
+                        <div>{{son.name}}</div>
+                    </van-grid-item>
+                </van-grid>
+                
+                <gm-divide title="推荐商品"></gm-divide>
+                <!--商品列表  -->
+                <div class="goods-list-box body-container">
+                    <gm-goods v-for="(goods, index) in goodsList"
+                              :key="index"
+                              :goods="goods"
+                              :showOrigin="false"
+                              height="320"
+                    ></gm-goods>
+                </div>
+                
+                <!--加载-->
+                <gm-loading
+                        v-if="showLoading"
+                        ref="loadings"
+                        url="get_goods_list"
+                        :params="goodsParams"
+                ></gm-loading>
     
-            <!--加载-->
-            <gm-loading
-                    ref="loadings"
-                    url="get_goods_list"
-            ></gm-loading>
-
+            </div>
         </div>
-        <van-notify id="van-notify" />
-
-        <van-toast id="custom-selector"></van-toast>
+        <van-toast id="van-toast" />
 
     </div>
 </template>
 
 <script>
     import wepy from '@wepy/core'
-    import Notify from '@/vendor/vant/notify/notify';
     import Toast from "@/vendor/vant/toast/toast"
 
     var self;
@@ -50,36 +83,57 @@
         data:{
             activeKey: 0,
             goodsList:[],
+            goodsClassList : [],
+            showLoading:false,
+            sonClassList:[],
+            goodsParams:{}
         },
         methods:{
-            onChange(event) {
-                Notify({ type: 'primary', message: event.detail });
+            onChangeMenu(pid) {
+                let res = self.goodsClassList.filter(item=>{
+                    if (item.id == pid){
+                        return item;
+                    } 
+                })
+                self.sonClassList=res[0].children
+                self.goodsParams.cate_id = pid;
             },
-            getGoodsList(){
-                return self.$app.$get('get_goods_list', {page: self.page});
+            getGoodsList(cate_id = 0){
+                return self.$app.$get('get_goods_list', {page: self.page, cate_id: cate_id});
 
                 // if (self.page == 1) {
                 //     return self.$app.$get('get_goods_list', {page: self.page});
                 // }
             },
+            getGoodsClass(){
+                return self.$app.$post('get_goods_class_list', {});
+            },
 
             initDatas() {
                 let goods_list = self.getGoodsList();
-                Promise.all([goods_list]).then((result) => {
+                let goods_class_list = self.getGoodsClass();
+                Promise.all([goods_list, goods_class_list]).then((result) => {
                     let goods_list_res = result[0];
+                    let goods_class_list_res = result[1];
+
                     if (goods_list_res.data.code > 0) {
                         self.goodsList = goods_list_res.data.data.goods_list;
                         self.totalPage = goods_list_res.data.data.goods_count;
                     }
 
-                    console.log(self.goodsList);
-                    setTimeout(res => Toast('加载完成'), 2000);
+                    if (goods_class_list_res.data.code > 0) {
+                        self.goodsClassList = goods_class_list_res.data.data.cate_list;
+                        self.sonClassList=self.goodsClassList[0].children
+                    }
+                    
+                    setTimeout(res => Toast('加载完成'), 500);
+                    self.showLoading = true;
 
                 }).catch((error) => {
                     console.log(error)
                 })
             },
-            loading(){
+            loadings(){
                 Toast.loading({
                     mask: true,
                     message: '加载中...',
@@ -90,7 +144,7 @@
 
         onLoad(){
             self = this;
-            self.loading();
+            self.loadings();
             self.initDatas();
         },
         // 上拉
@@ -117,6 +171,9 @@
         "gm-loading" : "~@/components/loading",
         "van-loading": "~@/vendor/vant/loading/index",
         "van-toast": "~@/vendor/vant/toast/index",
+        "gm-divide" : "~@/components/divide",
+        "van-grid" : "~@/vendor/vant/grid/index",
+        "van-grid-item" : "~@/vendor/vant/grid-item/index",
     },
     "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
     "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->

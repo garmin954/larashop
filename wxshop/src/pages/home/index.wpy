@@ -63,13 +63,11 @@
   <div class="container">
     <div class="gamin-search">
       <van-search
-        value="{{ value }}"
         placeholder="请输入搜索关键词"
+        shape="round"
         use-action-slot
-        :change="onChange"
-        :search="onSearch"
+        @tap="onSearch"
       >
-        <view slot="action" @tap="onClick">搜索</view>
       </van-search>
     </div>
 
@@ -84,8 +82,21 @@
     <!--菜单  -->
     <div class="menu-box body-container">
       <van-grid square>
-        <van-grid-item icon="photo-o" text="文字"  />
+          <van-grid-item icon="photo-o" text="团购"  />
+          <van-grid-item icon="photo-o" text="秒杀"  />
+          <van-grid-item icon="photo-o" text="优惠券"  />
+          <van-grid-item icon="photo-o" text="积分商城"  />
+          <van-grid-item icon="photo-o" text="购物车"  />
+          <van-grid-item icon="photo-o" text="分类"  />
+          <van-grid-item icon="photo-o" text="品牌"  />
+          <van-grid-item  >
+
+              <text solt="text">购物车</text>
+          </van-grid-item>
+
       </van-grid>
+
+
     </div>
       
     <!--拼团  -->
@@ -117,7 +128,7 @@
             :page="page"
             url="get_goods_list"
     ></gm-loading>
-    <!--<van-toast v-if="getMore" id="van-toast"/>-->
+    <van-toast v-if="getMore" id="van-toast"/>
     <van-toast id="custom-selector"></van-toast>
   </div>
 
@@ -144,7 +155,6 @@
       }
     },
     data: {
-      value: "搜索",
       auto: true,
       time: 2000,
       bannerList: [
@@ -204,36 +214,19 @@
                   self.totalPage = goods_list_res.data.data.goods_count;
               }
 
-              console.log(self.goodsList);
-              setTimeout(res => Toast('加载完成'), 2000);
+              Toast('加载完成');
 
           }).catch((error) => {
               console.log(error)
           })
       },
-      onChange(e) {
-        this.value = e.detail
-
+      onSearch(e) {
+        self.$navigate({
+            url: '/pages/other/search'
+        })
       },
-      onSearch() {
-        console.log('sd京拉');
-        // Toast.success('成功文案');
-        Toast.loading({
-          mask: true,
-          message: '加载中...'
-        });
-      },
-      onClick() {
-        console.log('京拉');
-        // Toast.success('成功文案');
-        Toast.loading({
-          mask: true,
-          message: '加载中...'
-        });
-
-      },
-      loading(){
-        Toast.loading({
+      loadings(){
+          Toast.loading({
           mask: true,
           message: '加载中...',
           duration:0
@@ -250,7 +243,7 @@
     },
     onLoad(){
       self = this
-      self.loading();
+      self.loadings();
       self.initDatas();
     },
     onReady(){

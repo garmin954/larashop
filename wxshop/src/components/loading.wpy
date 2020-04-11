@@ -11,8 +11,9 @@
 <template>
     <div class="loading-box body-container">
 <!--        <van-divider contentPosition="center">-->
-            <view v-if="gone"> --碰到我的底线了--</view>
-            <van-loading v-else  size="24px" customStyle="font-size:18rpx">加载中...</van-loading>
+        <view v-if="gone == 0"> -- 碰到我的底线了 --</view>
+        <view v-if="gone == -1"> -- 拉取异常 --</view>
+        <van-loading v-if="gone == 1"  size="24px" customStyle="font-size:18rpx">加载中...</van-loading>
 <!--        </van-divider>-->
     </div>
 </template>
@@ -26,7 +27,7 @@
             implement: false, // 是否执行
             currentPage:1, //当前页
             totalPage:1, //总页数
-            gone:false, // 加载全部了
+            gone:2, // 加载全部了(-1 错误异常； 0 全部加载完； 1加载中， 2 不显示)
         },
         
         props:{
@@ -58,30 +59,32 @@
             },
             currentPage(){
                 if (self.currentPage >= self.totalPage){
-                    self.gone = true;
+                    self.implement = true;
+                    self.gone = 0;
                 } 
             }
         },
         methods:{
             getItemMore(){
-
                 let promise = new Promise((resolve, reject) => {
 
-                    if (self.implement || self.gone){
+                    if (self.implement || self.gone == 0 || self.gone == -1){
                         reject(error)
                         // return false;
                     }
-
+                    self.gone = 1;
                     self.implement = true;
-
                     self.params.page = self.currentPage;
 
                     self.$app.$post(self.url, self.params).then(response=>{
                         self.totalPage = response.data.data.total;
                         self.implement = false;
                         self.currentPage++;
+                        self.gone = 1;
                         resolve(response);
                     }).catch(error=>{
+                        self.gone = -1;
+                        self.implement = false;
                         reject(error);
                     })    
                 })

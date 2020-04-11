@@ -459,6 +459,6 @@ Route::namespace('chat')->group(function(){
 Route::namespace('Weixin')->prefix('weixin')->group(function(){
     Route::get('/index/get_banner_list', 'IndexController@getBannerList');
     Route::get('/goods/get_group_to_home', 'GoodsController@getGroupToHome');
-    Route::get('/goods/get_goods_list', 'GoodsController@getGoodsToHome');
-
+    Route::any('/goods/get_goods_list', 'GoodsController@getGoodsToHome');
+    Route::post('/goods/get_goods_class', 'GoodsController@getGoodsClass');
 });

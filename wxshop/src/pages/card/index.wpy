@@ -10,22 +10,23 @@
 
 <template>
     <div class="card-box">
-        <van-card
-                v-for="(item, index) in goodsList"
-                num="2"
-                tag="标签"
-                price="10.00"
-                desc="描述信息"
-                title="商品标题"
-                thumb="{{ imageURL }}"
-                :key="index"
-        >
-            
-            <view slot="footer">
-                <van-button size="mini">按钮</van-button>
-                <van-button size="mini">按钮</van-button>
-            </view>
-        </van-card>
+<!--        <van-card-->
+<!--                v-for="(item, index) in goodsList"-->
+<!--                num="2"-->
+<!--                tag="标签"-->
+<!--                price="10.00"-->
+<!--                desc="描述信息"-->
+<!--                title="商品标题"-->
+<!--                thumb="{{ imageURL }}"-->
+<!--                :key="index"-->
+<!--        >-->
+<!--            <view slot="footer">-->
+<!--                <van-button size="mini">按钮</van-button>-->
+<!--                <van-button size="mini">按钮</van-button>-->
+<!--            </view>-->
+<!--        </van-card>-->
+
+        <gm-abnormal type="card"></gm-abnormal>
     </div>
 </template>
 
@@ -34,7 +35,7 @@
 
     wepy.page({
         data:{
-            goodsList: [{},{},{},{}],
+            goodsList: [{},{}],
             imageURL:"https://img.yzcdn.cn/vant/ipad.jpeg"
         }
     })
@@ -47,6 +48,7 @@
             "van-icon": "~@/vendor/vant/icon/index",
             "van-card": "~@/vendor/vant/card/index",
             "van-button":　"~@/vendor/vant/button/index",
+            "gm-abnormal" : "~@/components/abnormal"
         }
     }
 </config>

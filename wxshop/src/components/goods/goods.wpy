@@ -67,7 +67,7 @@
         <h1 class="h1">{{goods.goods_name}}</h1>
         <h2 class="h2">
             ￥{{goods.goods_price}}
-            <em class="em">￥{{goods.goods_market_price}}</em>
+            <em class="em" v-if="showOrigin">￥{{goods.goods_market_price}}</em>
             <van-icon name="cart" color="#ffffff" />
         </h2>
 
@@ -86,6 +86,10 @@
             goods:{
                 type:Object,
                 default:{},
+            },
+            showOrigin:{
+                type:Boolean,
+                default:true,
             }
         },
 

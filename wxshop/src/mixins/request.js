@@ -5,10 +5,11 @@ export default {
   },
   methods: {
     $get(url, data) {
-      var promise = new Promise((resolve, reject) => {
+      let promise = new Promise((resolve, reject) => {
         wx.request({
           url: Config.api[url],
           data: data,
+          method: 'GET',
           header: {'content-type': 'application/json'}, // 或者是  header: {'content-type': 'application/json'},
           success: res => {
             if (res.statusCode === 200) {
@@ -31,6 +32,7 @@ export default {
         wx.request({
           url: Config.api[url],
           data: data,
+          method: 'POST',
           header: {'content-type': 'applicction/json'}, //  或者是 header{'content-type':'application/x-www-form-urlencoded'},
           success: res => {
             if (res.statusCode === 200) {
