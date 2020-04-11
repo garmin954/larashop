@@ -1,10 +1,191 @@
-<style>
-    
+<style lang="less">
+    /*.mine{*/
+        /*background-color: grey;*/
+    /*}*/
+    .head{
+        height: 270rpx;
+        background-color: white;
+        .head-top{
+            height: 50rpx;
+            width:100%;
+            background-color: #ffcf00;
+            display: flex;
+            justify-content: space-between;
+            .head-top-icon{
+                height: 100%;
+                padding:5px ;
+              }
+        }
+        .head-middle{
+            height:150rpx;
+            background: url("https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-head.png") no-repeat center;
+            background-size: 100% 150rpx;
+            .head-middle-left{
+                padding-left: 1rem;
+                display: flex;
+                justify-content: space-between;
+                height:3rem;
+                width: 10rem;
+                position: absolute;
+                bottom: 0;
+                top: 3rem;
+                .head-middle-left-personMessage{
+                    width: 7rem;
+                    line-height: 1.5rem;
+                    padding-left: 0.8rem;
+                    font-size: 0.8rem;
+                }
+            }
+            .head-middle-right{
+                image{
+                    width: 30%;
+                    height: 4rem;
+                    position: absolute;
+                    right: 0;
+                    top: 2rem;
+
+                }
+            }
+        }
+        .head-bottom{
+            font-size: 0.5rem;
+            padding-left: 1rem;
+            line-height: 2rem;
+        }
+    }
+    .myOrder{
+        margin-top: 0.5rem;
+        background-color: white;
+        height: 127rpx;
+        .van-cell:after{
+            border:0
+        }
+        van-grid{
+            text-align: center;
+            van-grid-item{
+                color: orange;
+                icon-size:14rpx;
+
+            }
+        }
+    }
+    .commonTools{
+        position: relative;
+        top: 4rem;
+        /*font-size: 25rpx;*/
+        color: black;
+        van-grid{
+            van-grid-item{
+                image{
+                    width: 30px;
+                    height: 30px
+                }
+                text{
+                    padding-top: 10rpx;
+                    font-size: 25rpx;
+                }
+            }
+        }
+    }
 </style>
 
 <template>
-    <div>
-        mine
+    <div class="mine">
+        <div class="head">
+            <div class="head-top">
+                <div class="head-top-icon"><van-icon name="setting-o" /></div>
+                <div class="head-top-icon"><van-icon name="chat-o" badge="9" /></div>
+            </div>
+            <div class="head-middle">
+                <div class="head-middle-left">
+                    <div class="head-middle-left-img">
+                        <van-image
+                                round
+                                width="3rem"
+                                height="3rem"
+                                src="https://img.yzcdn.cn/vant/apple-1.jpg"
+                        />
+                    </div>
+                    <div class="head-middle-left-personMessage">
+                        <h3>嘻哈杂货铺</h3>
+                        <img src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-f1.png" style="width: 50%;height: 15px"/>
+                    </div>
+                </div>
+                <div class="head-middle-right">
+                    <img src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-h5.png" style="width: 30%;height: 4rem"/>
+                </div>
+            </div>
+            <div class="head-bottom">
+                    <span style="border: 0.5px solid grey;padding: 0 0.2rem;margin-right: 0.2rem;">酒店特权</span>
+                <span>F2/F3会员500里抢兑高星级酒店</span>
+                    <span style="float: right;padding-right: 1rem;">></span>
+            </div>
+        </div>
+        <div class="myOrder">
+                <!--<span style="font-size: 0.8rem;padding-left: 1rem">我的订单</span>-->
+                <!--<span style="font-size: 0.2rem;float: right;padding-right: 0.8rem">我的订单 ></span>-->
+                    <van-cell title="我的订单" is-link value="我的订单" />
+                <van-grid :column-num="5" :border="border">
+                    <van-grid-item icon="pending-payment" text="待付款"/>
+                    <van-grid-item icon="underway-o" text="处理中" />
+                    <van-grid-item icon="completed" text="待出行" />
+                    <van-grid-item icon="comment-o" text="待评价" />
+                    <van-grid-item icon="after-sale" text="退款/售后" />
+                </van-grid>
+        </div>
+        <div class="commonTools">
+            <van-cell title="常见工具" :border="false"/>
+            <van-grid :border="false" :column-num="4">
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav06.png" alt=""></image>
+                    <text>红包优惠券</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav07.png" alt=""></image>
+                    <text>流量中心</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav08.png" alt=""></image>
+                    <text>我的收藏</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav09.png" alt=""></image>
+                    <text>购物车</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav10.png" alt=""></image>
+                    <text>常用信息</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav11.png" alt=""></image>
+                    <text>环游记</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav12.png" alt=""></image>
+                    <text>会员卡</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav13.png" alt=""></image>
+                    <text>机票提醒</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav14.png" alt=""></image>
+                    <text>口令兑换</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav15.png" alt=""></image>
+                    <text>安全中心</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav16.png" alt=""></image>
+                    <text>我的客服</text>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <image src="https://www.17sucai.com/preview/1268063/2018-07-24/flying/images/icon-nav17.png" alt=""></image>
+                    <text>有奖反馈</text>
+                </van-grid-item>
+            </van-grid>
+        </div>
     </div>
 </template>
 
@@ -12,8 +193,12 @@
     import wepy from '@wepy/core'
 
     wepy.page({
-        data:{
-            
+        data(){
+            return{
+                active: 0,
+                border:false
+
+            }
         }
     })
 </script>
@@ -22,7 +207,12 @@
     {
         navigationBarTitleText: '个人中心',
         usingComponents:{
+            "van-icon": "~@/vendor/vant/icon/index",
+            "van-image" :"~@/vendor/vant/image/index",
+            "van-cell" :"~@/vendor/vant/cell/index",
+            "van-grid" :"~@/vendor/vant/grid/index",
+            "van-grid-item" :"~@/vendor/vant/grid-item/index",
 
-            "van-icon": "~@/vendor/vant/icon/index"}
+        }
         }
 </config>
