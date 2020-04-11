@@ -1,5 +1,5 @@
-// const base_url = "https://api.shop.org";
-const base_url = "http://api.jietuma.com";
+const base_url = "https://api.shop.org";
+// const base_url = "http://api.jietuma.com";
 
 
 let api = {

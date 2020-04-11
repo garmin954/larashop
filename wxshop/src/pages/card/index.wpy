@@ -26,7 +26,7 @@
 <!--            </view>-->
 <!--        </van-card>-->
 
-        <gm-abnormal type="sd"></gm-abnormal>
+        <gm-abnormal type="card"></gm-abnormal>
     </div>
 </template>
 
