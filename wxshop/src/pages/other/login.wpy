@@ -4,7 +4,16 @@
 
 <template>
     <div>
-        登录中
+        <van-cell title="展示弹出层" is-link @tap="showPopup" />
+
+        <van-popup :show="show" @close="onClose">
+
+            <open-data type="groupName" open-gid="xxxxxx"></open-data>
+            <open-data type="userAvatarUrl"></open-data>
+            <open-data type="userGender" lang="zh_CN"></open-data>
+            <button open-type="getUserInfo">确认登录</button>
+        </van-popup>
+
     </div>
 </template>
 
@@ -13,7 +22,30 @@
 
     wepy.page({
         data:{
+            show:false,
+        },
+        methods:{
+            onClose(){
+                this.show = false;
+            },
+            showPopup(){
+                console.log('truetruetruetrue');
+                this.show = true;
+            }
+        },
 
+        bindgetuserinfo(info){
+            console.log(info);
         }
     })
 </script>
+<config>
+{
+    navigationBarTitleText: "登录",
+    "usingComponents": {
+        "van-popup": "~@/vendor/vant/popup/index",
+        "van-cell": "~@/vendor/vant/cell/index",
+
+    }
+ }
+</config>

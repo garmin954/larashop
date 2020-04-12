@@ -3,10 +3,12 @@ const base_url = "http://api.jietuma.com";
 
 
 let api = {
-    get_banner : `index/get_banner_list`,
-    get_group_to_home : `goods/get_group_to_home`,
-    get_goods_list : `goods/get_goods_list`,
-    get_goods_class_list : `goods/get_goods_class`
+    get_banner : `index/get_banner_list`, // 首页banner
+    get_group_to_home : `goods/get_group_to_home`, // 首页团购
+    get_goods_list : `goods/get_goods_list`, // 商品列表
+    get_goods_class_list : `goods/get_goods_class`, // 商品分类
+    login : `auth/login`, // 登录
+
 }
 
  Object.keys(api).forEach(item=>{

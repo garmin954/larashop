@@ -100,4 +100,9 @@ class Users extends Authenticatable implements JWTSubject
         return $this->insert($data);
     }
 
+
+    public function saveOpenid()
+    {
+
+    }
 }

@@ -89,9 +89,9 @@
           <van-grid-item icon="photo-o" text="购物车"  />
           <van-grid-item icon="photo-o" text="分类"  />
           <van-grid-item icon="photo-o" text="品牌"  />
-          <van-grid-item  >
+          <van-grid-item  use-slot>
 
-              <text solt="text">购物车</text>
+              <text @tap="goToLogin">登录</text>
           </van-grid-item>
 
       </van-grid>
@@ -231,7 +231,12 @@
           message: '加载中...',
           duration:0
         });
-      }
+      },
+        goToLogin(){
+          self.$navigate({
+              url:`/pages/other/login`
+          })
+        }
     },
 
     created (){
