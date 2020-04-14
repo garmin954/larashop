@@ -1,27 +1,51 @@
+import Stroge from '@/common/storge'
+
 export default {
-    data: {},
-    mothods: {
+    data: {
+        code:'',
+    },
+    methods: {
         // 获取code 并保存
-        getCode(){
-            wx.login({
-                success (res) {
-                    if (res.code) {
-                        //发起网络请求
-                        console.log(res.code);
-                        // wx.request({
-                        //     url: 'https://test.com/onLogin',
-                        //     data: {
-                        //         code: res.code
-                        //     }
-                        // })
-                    } else {
-                        console.log('登录失败！' + res.errMsg)
+        async getCode(){
+            let self = this;
+            let code = Stroge.get('wx_code');
+            if (!code){
+                 let code = await this.refreshCode();
+                    Stroge.set('wx_code', code, 3600*4);
+                    self.code = code;
+                    return code;
+            } else{
+                self.code = code;
+                return self.code;
+            }
+            
+        },
+        refreshCode(){
+            let promise = new Promise((resolve, reject)=>{
+                wx.login({
+                    success (res) {
+                        if (res.code) {
+                            // 存储起来
+                            resolve(res.code);
+                            return res.code;
+                        } else {
+                            reject();
+                            return false;
+                        }
+                    },
+                    fail(error) {
+                        reject(error);
                     }
-                }
+                })
             })
+            return promise;
+        },
+        isLogin() {
+            
         }
     },
     created () {
-        console.log('http in mixin');
+        console.log('code in mixin');
+        this.getCode()
     }
 }
