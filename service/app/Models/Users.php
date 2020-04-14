@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Hash;
+use Psy\Util\Str;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,7 +16,7 @@ class Users extends Authenticatable implements JWTSubject
     protected $table = "users"; //指定表
     protected $primaryKey = "id"; //指定id字段
     public $timestamps = false;
-    protected $fillable = ['username','password','add_time'];
+    protected $fillable = ['username','password','add_time','nickname','avatar'];
 
      use Notifiable;
 
@@ -101,8 +103,26 @@ class Users extends Authenticatable implements JWTSubject
     }
 
 
-    public function saveOpenid()
+    public function createWechatUser($data)
     {
+        $user = $this->create([
+            "username" =>  $data['openId'],
+            "password" => Hash::make($data['openId']),
+            "pay_password" => '000000',
+            "nickname" => $data['nickName'],
+            "gender" => $data['gender'],
+            "avatar" => $data['avatarUrl'],
+            "phone" => '',
+            "email" => '',
+            "money" => 0,
+            "frozen_money" => 0,
+            "integral" => 0,
+            "inviter_id" => 0,
+            "login_time" =>time(),
+            "add_time" => time(),
+        ]);
 
+        $wechatModel = new WechatUsers();
+        return $wechatModel->createWechatUser($user->id, $data);
     }
 }

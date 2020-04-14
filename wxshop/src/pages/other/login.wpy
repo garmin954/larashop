@@ -12,6 +12,7 @@
     .header image {
         width: 200rpx;
         height: 200rpx;
+        border-radius: 50%;
     }
 
     .content {
@@ -45,46 +46,63 @@
             <!--<button open-type="getUserInfo">确认登录</button>-->
         <!--</van-popup>-->
 
-        <view wx:if="{{canIUse}}">
-            <view class='header'>
-                <image src='/images/wx_login.png'></image>
+        <view >
+            <view class="header">
+                <image src="https://garmin954.github.io/img/avatar.png"></image>
             </view>
 
-            <view class='content'>
+            <view class="content">
                 <view>申请获取以下权限</view>
                 <text>获得你的公开信息(昵称，头像等)</text>
             </view>
 
-            <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            <button class="bottom" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
                 授权登录
             </button>
         </view>
 
-        <view wx:else>请升级微信版本</view>
 
     </div>
 </template>
 
 <script>
     import wepy from '@wepy/core'
-
+    var self;
     wepy.page({
         data:{
             show:false,
+            encryptedData:{},
+            iv:'',
         },
         methods:{
-            onClose(){
-                this.show = false;
-            },
-            showPopup(){
-                console.log('truetruetruetrue');
-                this.show = true;
+            bindGetUserInfo(res){
+                self.$app.$post('login', {
+                    code: self.$app.code,
+                    encryptedData: res.$wx.detail.encryptedData,
+                    iv: res.$wx.detail.iv
+                }).then(response=>{
+                    console.log(response);
+                    self.$app.destoryCode();
+                    self.$app.getCode();
+
+                }).catch(error=>{
+                    console.log(error);
+                    self.$app.destoryCode();
+                    self.$app.getCode();
+
+                })
+                console.log('授权回调');
+                console.log(res.$wx.detail);
+                console.log(res);
+
             }
         },
-
-        bindgetuserinfo(info){
-            console.log(info);
+        async onLoad(query) {
+            self = this;
+            console.log(self);
+            self.$app.getCode();
         }
+
     })
 </script>
 <config>

@@ -42,6 +42,9 @@ export default {
         },
         isLogin() {
             
+        },
+        destoryCode(){
+            Stroge.destory('wx_code');
         }
     },
     created () {
