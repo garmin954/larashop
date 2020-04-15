@@ -121,6 +121,7 @@
         },
         async onLoad(query) {
             self = this;
+            wx.hideTabBar()
             console.log(Storge.get('token'));
             self.$app.getCode();
         }

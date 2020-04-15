@@ -14,36 +14,25 @@ export default {
   },
   methods: {
     $get(url, data) {
-      let promise = new Promise((resolve, reject) => {
-        wx.request({
-          url: Config.api[url],
-          data: data,
-          method: 'GET',
-          header: {'content-type': 'application/json', 'Authorization': Authorizations}, // 或者是  header: {'content-type': 'application/json'},
-          success: res => {
-            if (res.statusCode === 200) {
-              resolve(res)
-            } else {
-              reject(res)
-            }
-          },
-          fail: res => {
-            reject(res)
-          }
-        })
-      })
-
-      return promise
+      return this.requestCore(url, data, "GET");
     },
 
     $post(url, data) {
+      return this.requestCore(url, data, "POST");
+    },
+
+    requestCore(url, data, method){
+      let self = this;
       let promise = new Promise((resolve, reject) => {
         wx.request({
           url: Config.api[url],
           data: data,
-          method: 'POST',
+          method: method,
           header: {'content-type': 'applicction/json', 'Authorization': Authorizations}, //  或者是 header{'content-type':'application/x-www-form-urlencoded'},
           success: res => {
+            if (res.statusCode === 401){
+              self.goToLogin()
+            }
             if (res.statusCode === 200) {
               resolve(res)
             } else {
@@ -58,6 +47,11 @@ export default {
       return promise
     },
 
+    goToLogin(){
+      this.$navigate({
+        url: '/pages/other/login'
+      })
+    }
   },
   created () {
     console.log('http in mixin');

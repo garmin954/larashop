@@ -137,9 +137,11 @@
 <script>
   import wepy from "@wepy/core"
   import Toast from "@/vendor/vant/toast/toast"
-
+  import store from '../store'
+  import { mapActions } from '@wepy/x'
   var self;
   wepy.page({
+      store,
     config: {
       navigationBarTitleText: "test"
     },
@@ -176,6 +178,9 @@
     },
 
     methods: {
+        ...mapActions({
+            incrementAsync: 'incrementAsync'
+        }),
       getBanner(){
           // console.log(self);
           return  self.$app.$get('get_banner', {});
@@ -245,6 +250,7 @@
       //     self.userInfo = res.userInfo
       //   }
       // })
+
     },
     onLoad(){
       self = this

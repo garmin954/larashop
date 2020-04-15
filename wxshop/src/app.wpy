@@ -20,6 +20,7 @@ var self;
 wepy.use(vuex);
 
 wepy.app({
+
   mixins: [$http,$wxLogin],
   hooks: {
     // App 级别 hook，对整个 App 生效
@@ -34,8 +35,8 @@ wepy.app({
     userInfo: null
   },
 
-  async onLaunch() {
-
+  onLaunch() {
+      // 判断是否登录？
   },
   methods: {
 
