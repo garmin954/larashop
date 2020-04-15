@@ -273,8 +273,6 @@
 {
     navigationBarTitleText: "Garmin商城",
     usingComponents: {
-        "i-input": "~@/vendor/iview/input/index",
-        "i-card": "~@/vendor/iview/card/index",
         "van-search": "~@/vendor/vant/search/index",
         "van-toast": "~@/vendor/vant/toast/index",
         "van-grid": "~@/vendor/vant/grid/index",

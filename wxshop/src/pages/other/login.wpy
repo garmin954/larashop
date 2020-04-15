@@ -60,13 +60,17 @@
                 授权登录
             </button>
         </view>
-
+        
+        <van-toast id="van-toast"/>
 
     </div>
 </template>
 
 <script>
     import wepy from '@wepy/core'
+    import Storge from '@/common/storge'
+    import Toast from "@/vendor/vant/toast/toast"
+
     var self;
     wepy.page({
         data:{
@@ -76,11 +80,29 @@
         },
         methods:{
             bindGetUserInfo(res){
+                Toast.loading({
+                    mask: true,
+                    message: '登录中...',
+                    duration:0
+                });
+                
                 self.$app.$post('login', {
                     code: self.$app.code,
                     encryptedData: res.$wx.detail.encryptedData,
                     iv: res.$wx.detail.iv
                 }).then(response=>{
+                    if (response.data.code>0){ // 登录成功
+                        // token
+                        Storge.set('token', response.data.data.token);
+                        Storge.set('user_info', response.data.data.token);
+                        console.log(Storge.get('token'));
+                        Toast('登录成功！');
+                        setTimeout(function () {
+                            wx.switchTab({
+                                url:`/pages/home/index`
+                            })
+                        }, 500)
+                    } 
                     console.log(response);
                     self.$app.destoryCode();
                     self.$app.getCode();
@@ -99,7 +121,7 @@
         },
         async onLoad(query) {
             self = this;
-            console.log(self);
+            console.log(Storge.get('token'));
             self.$app.getCode();
         }
 
@@ -111,7 +133,7 @@
     "usingComponents": {
         "van-popup": "~@/vendor/vant/popup/index",
         "van-cell": "~@/vendor/vant/cell/index",
-
+        "van-toast": "~@/vendor/vant/toast/index",
     }
  }
 </config>

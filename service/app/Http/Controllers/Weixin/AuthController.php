@@ -46,7 +46,7 @@ class AuthController extends BaseController
             }
 
             unset($wechat_info['xcx_openid']);
-            return $this->responseData('登录成功', 0, compact('wechat_info', 'token'));
+            return $this->responseData('登录成功', 1, compact('wechat_info', 'token'));
         }catch (\Exception $exception){
 
             return $this->responseData($exception->getMessage(), 0);

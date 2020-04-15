@@ -1,5 +1,5 @@
 // 设置
-const set = (key, value, time) => {
+const set = (key, value, time=99999999) => {
     let timestamp = Date.parse(new Date())/1000;
     wx.setStorageSync(`${key}_time`, timestamp+time);
     wx.setStorageSync(key, value);
@@ -16,7 +16,8 @@ const get = (key) => {
     }else{
         destory(key);
     }
-
+    
+    return '';
 }
 
 // 销毁
