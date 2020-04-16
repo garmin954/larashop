@@ -1,28 +1,10 @@
 import Vuex from '@wepy/x';
+import states from "./states";
+import mutations from "./mutations";
+import actions from "./actions";
 
 export default new Vuex.Store({
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++;
-    },
-    decrement (state) {
-      state.counter--;
-    }
-  },
-  actions: {
-    increment ({ commit }) {
-      commit('increment');
-    },
-    decrement ({ commit }) {
-      commit('decrement');
-    },
-    incrementAsync ({ commit }) {
-      setTimeout(() => {
-        commit('increment');
-      }, 1000);
-    }
-  }
+  state: states,
+  mutations:mutations,
+  actions: actions
 });

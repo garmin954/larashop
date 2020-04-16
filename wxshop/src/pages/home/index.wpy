@@ -130,6 +130,8 @@
     ></gm-loading>
     <van-toast v-if="getMore" id="van-toast"/>
     <van-toast id="custom-selector"></van-toast>
+
+    <gm-popup-login></gm-popup-login>
   </div>
 
 </template>
@@ -137,15 +139,18 @@
 <script>
   import wepy from "@wepy/core"
   import Toast from "@/vendor/vant/toast/toast"
-  import store from '../store'
+  import store from '@/store'
   import { mapActions } from '@wepy/x'
+  // import $wxLogin from '@/mixins/login'
+
   var self;
   wepy.page({
+      // mixins: [$wxLogin],
       store,
-    config: {
-      navigationBarTitleText: "test"
-    },
-    hooks: {
+      config: {
+        navigationBarTitleText: "test"
+      },
+      hooks: {
       // Page 级别 hook, 只对当前 Page 的 setData 生效。
       "before-setData": function (dirty) {
         if (Math.random() < 0.2) {
@@ -156,7 +161,7 @@
         return dirty
       }
     },
-    data: {
+      data: {
       auto: true,
       time: 2000,
       bannerList: [
@@ -171,13 +176,14 @@
       page: 1,
       goodsList:[],
       getMore:true, // 加载更多
-      totalPage: 5, // 总共页数  
+      totalPage: 5, // 总共页数
+      showLogin: false,
     },
 
-    computed: {
+      computed: {
     },
 
-    methods: {
+      methods: {
         ...mapActions({
             incrementAsync: 'incrementAsync'
         }),
@@ -220,7 +226,8 @@
               }
 
               Toast('加载完成');
-
+              self.showLogin = true;
+              wx.showTabBar();
           }).catch((error) => {
               console.log(error)
           })
@@ -244,7 +251,7 @@
         }
     },
 
-    created (){
+      created (){
       // wx.getUserInfo({
       //   success (res) {
       //     self.userInfo = res.userInfo
@@ -252,12 +259,13 @@
       // })
 
     },
-    onLoad(){
+      onLoad(){
       self = this
+      wx.hideTabBar();
       self.loadings();
       self.initDatas();
     },
-    onReady(){
+      onReady(){
       // console.log('加载完成');
       // setTimeout(res => Toast('加载完成'), 2000);
 
@@ -272,7 +280,22 @@
           }).catch(error=>{
               
           })
+      },
+
+      onShareAppMessage(res) {
+          if (res.from === 'button') {
+              // 来自页面内转发按钮
+              console.log(1111,res.target)
+          }else{
+              console.log("来自右上角的11111")
+          }
+          return {
+              title: '自定义转发标题',
+              // 必须是/开头的完整路径
+              path: '/pages/home/index',
+          }
       }
+
   })
 </script>
 <config>
@@ -286,7 +309,9 @@
         "gm-goods-group" : "~@/components/goods/goods_group",
         "gm-goods" : "~@/components/goods/goods",
         "gm-loading" : "~@/components/loading",
-        "van-loading": "~@/vendor/vant/loading/index"
+        "van-loading": "~@/vendor/vant/loading/index",
+        "gm-popup-login" : "~@/components/popup-login",
+
     },
     "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
     "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->

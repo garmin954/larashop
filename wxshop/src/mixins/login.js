@@ -3,6 +3,7 @@ import Stroge from '@/common/storge'
 export default {
     data: {
         code:'',
+        isLogin:false,
     },
     methods: {
         // 获取code 并保存
@@ -18,7 +19,6 @@ export default {
                 self.code = code;
                 return self.code;
             }
-            
         },
         refreshCode(){
             let promise = new Promise((resolve, reject)=>{
@@ -40,15 +40,24 @@ export default {
             })
             return promise;
         },
-        isLogin() {
-            
-        },
-        destoryCode(){
+        // 删除code
+        destroyCode(){
             Stroge.destory('wx_code');
-        }
+        },
+        // 是否登录
+        isLoginAction() {
+           if ( Stroge.get('token')){
+               this.isLogin = true
+           }else {
+               this.isLogin = false
+           }
+        },
+
+
     },
     created () {
         console.log('code in mixin');
+        this.isLoginAction();
         this.getCode()
     }
 }

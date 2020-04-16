@@ -1,12 +1,16 @@
-<style>
-
+<style lang="less">
     .header {
-        margin: 90rpx 0 90rpx 50rpx;
-        border-bottom: 1px solid #ccc;
         text-align: center;
-        width: 650rpx;
-        height: 300rpx;
-        line-height: 450rpx;
+        height: 250rpx;
+        line-height: 250rpx;
+        padding: 49rpx;
+        box-sizing: content-box;
+
+        .line{
+            border-bottom: 1px solid #ccc;
+            position: relative;
+            top: -50rpx;
+        }
     }
 
     .header image {
@@ -17,13 +21,16 @@
 
     .content {
         margin-left: 50rpx;
-        margin-bottom: 90rpx;
+        margin-bottom: 60rpx;
+        font-size: 30rpx;
+
+
     }
 
     .content text {
         display: block;
         color: #9d9d9d;
-        margin-top: 40rpx;
+        margin-top: 30rpx;
     }
 
     .bottom {
@@ -31,15 +38,24 @@
         margin: 70rpx 50rpx;
         font-size: 35rpx;
     }
+    .popup-box{
+        width: 80%;
+    }
 
 </style>
 
 <template>
-    <div>
+    <div class="aui-flex aui-flex-title" style="background:none">
+        <van-popup
+                custom-class="popup-box"
+                closeable
+                close-icon="close"
+                :show="show"
+                @close="onClose">
 
-        <view >
             <view class="header">
                 <image src="https://garmin954.github.io/img/avatar.png"></image>
+                <view class="line"></view>
             </view>
 
             <view class="content">
@@ -50,35 +66,36 @@
             <button class="bottom" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
                 授权登录
             </button>
-        </view>
-        
-        <van-toast id="van-toast"/>
 
+        </van-popup>
     </div>
 </template>
 
 <script>
-    import wepy from '@wepy/core'
+    import wepy from '@wepy/core';
     import Storge from '@/common/storge'
     import Toast from "@/vendor/vant/toast/toast"
+    import $wxLogin from '@/mixins/login'
 
     var self;
-    wepy.page({
+    wepy.component({
+        mixins: [$wxLogin],
         data:{
-            show:false,
-            encryptedData:{},
-            iv:'',
+            show: false
         },
         methods:{
+            onClose() {
+                this.show = false;
+            },
             bindGetUserInfo(res){
                 Toast.loading({
                     mask: true,
                     message: '登录中...',
                     duration:0
                 });
-                
+
                 self.$app.$post('login', {
-                    code: self.$app.code,
+                    code: self.code,
                     encryptedData: res.$wx.detail.encryptedData,
                     iv: res.$wx.detail.iv
                 }).then(response=>{
@@ -88,12 +105,16 @@
                         Storge.set('user_info', response.data.data.token);
                         console.log(Storge.get('token'));
                         Toast('登录成功！');
+                        self.show = false
+                        wx.showTabBar()
                         setTimeout(function () {
                             wx.switchTab({
                                 url:`/pages/home/index`
                             })
                         }, 500)
-                    } 
+                    }else{
+                        Toast(response.data.message);
+                    }
                     console.log(response);
                     self.$app.destroyCode();
                     self.$app.getCode();
@@ -110,22 +131,34 @@
 
             }
         },
-        async onLoad(query) {
+        async created() {
             self = this;
-            wx.hideTabBar()
-            console.log(Storge.get('token'));
-            self.$app.getCode();
-        }
+            console.log(self.isLogin);
 
+            if (!self.isLogin){
+                self.show = true
+                wx.hideTabBar();
+            }
+            console.log(self);
+            // setTimeout(function () {
+            //     wx.hideTabBar()
+            //     console.log(Storge.get('token'));
+            //     self.$app.getCode();
+            // }, 500)
+
+        },
     })
 </script>
+
 <config>
-{
-    navigationBarTitleText: "登录",
-    "usingComponents": {
-        "van-popup": "~@/vendor/vant/popup/index",
-        "van-cell": "~@/vendor/vant/cell/index",
-        "van-toast": "~@/vendor/vant/toast/index",
+    {
+    navigationBarTitleText: '登录提示',
+    usingComponents:{
+    "van-loading": "~@/vendor/vant/loading/index",
+    "van-icon": "~@/vendor/vant/icon/index",
+    "van-divider": "~@/vendor/vant/divider/index",
+    "van-popup": "~@/vendor/vant/popup/index"
+    },
+    "onReachBottomDistance": 50,  <!--页面上拉触底事件触发时距页面底部距离，单位为px。-->
     }
- }
 </config>
