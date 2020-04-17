@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ee001c7-937d-4305-9db6-b1e5ae4b8bb8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/common/tools.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../service/app/Http/Controllers/Weixin/wechat.log" beforeDir="false" afterPath="$PROJECT_DIR$/../service/app/Http/Controllers/Weixin/wechat.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/other/login.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/other/login.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/card.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/goods/goods.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/goods/goods.wpy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -36,7 +43,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lanwan_foot_walking_applet-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,6 +80,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#ESLint/0.0.1366.728@0.0.1366.728" timestamp="1587047110395" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587136998896">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587136998896" />
     <state x="184" y="7" key="SettingsEditor" timestamp="1587047080581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

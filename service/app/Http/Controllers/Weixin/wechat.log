@@ -2814,3 +2814,19 @@ Content-Length: 82
 {"session_key":"6+eU18jKfjI8un48fbKDaw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
 --------
 NULL  
+[2020-04-17T22:30:09.141288+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_joCPpTsqyW9aNI4e55AMvooBhN1udGZWBZiQ-3Oc-IzeG_zn4CFkDR6-tJymiwGvzoOy_owG40ppOmC8Sx2OZQZIGqyqg-GNUsCMIqt3D-z-YH7_fm-LIZuNMngukB2-ohkGjqaun1OPVcDJMCTjAGAGWN&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043xJnyQ0CqI54266RzQ0Lk7yQ0xJnyM&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 17 Apr 2020 14:30:09 GMT
+Content-Length: 82
+
+{"session_key":"+P4CWc9q2Wtn3Lf9tYlKBw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
