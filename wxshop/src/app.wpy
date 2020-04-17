@@ -50,6 +50,8 @@ wepy.app({
         'pages/card/index',  <!-- 购物车 -->
         'pages/other/search',  <!-- 搜索 -->
         'pages/other/login',  <!-- 登录 -->
+        'pages/goods/goods_detail',  <!-- 商品详情 -->
+
     ],
     window: {
       backgroundTextStyle: 'light',

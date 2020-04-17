@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ee001c7-937d-4305-9db6-b1e5ae4b8bb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wxshop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mine/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mine/index.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.wpy" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,29 +32,30 @@
         <counts>
           <entry key="js" value="1" />
           <entry key="less" value="1" />
-          <entry key="png" value="1" />
+          <entry key="png" value="5" />
           <entry key="rnc" value="1" />
-          <entry key="wpy" value="7" />
+          <entry key="vue" value="1" />
+          <entry key="wpy" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="1" />
+          <entry key="Image" value="5" />
           <entry key="JavaScript" value="1" />
           <entry key="Less" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
-          <entry key="Vue.js" value="6" />
+          <entry key="Vue.js" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="wpy" value="1613" />
+          <entry key="wpy" value="3434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Vue.js" value="1613" />
+          <entry key="Vue.js" value="3434" />
         </counts>
       </usages-collector>
     </session>
@@ -68,48 +63,52 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/mine/index.wpy">
+        <entry file="file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="189" column="11" lean-forward="true" selection-start-line="189" selection-start-column="11" selection-end-line="189" selection-end-column="11" />
+            <state relative-caret-position="183">
+              <caret line="62" column="27" lean-forward="true" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
               <folding>
-                <element signature="e#90#192#0" />
-                <element signature="e#345#1339#0" />
-                <element signature="e#605#645#0" />
-                <element signature="e#1421#1445#0" />
-                <element signature="e#1623#1639#0" />
-                <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-image#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#2;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#1;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#2;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#3;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#4;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#5;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#6;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#7;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#8;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#9;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#10;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#van-grid-item#11;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
+                <element signature="e#30#46#0" />
+                <element signature="e#38#228#0" />
+                <element signature="e#76#144#0" />
+                <element signature="e#130#174#0" />
+                <element signature="e#527#559#0" />
+                <element signature="e#534#1116#0" />
+                <element signature="e#558#798#0" />
+                <element signature="e#1689#1705#0" />
+                <element signature="e#1845#1861#0" />
+                <element signature="e#1469#1673#0" />
+                <element signature="e#1686#2062#0" />
+                <element signature="e#2368#2636#0" />
+                <element signature="e#2474#2716#0" />
+                <element signature="n#view#0;n#template#0;n#!!top" />
+                <element signature="n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#view#0;n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#divn#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+                <element signature="n#van-goods-action#0;n#template#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$navigate</find>
+      <find>flex</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -118,6 +117,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/pages/mine/index.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/home/index.wpy" />
+        <option value="$PROJECT_DIR$/src/app.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/goods/goods_detail.wpy" />
       </list>
     </option>
   </component>
@@ -143,7 +145,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="807" />
     <option name="height" value="688" />
@@ -204,6 +206,13 @@
               <item name="wxshop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -216,6 +225,13 @@
             <path>
               <item name="wxshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="wxshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="other" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxshop" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,13 +239,6 @@
               <item name="wxshop" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wxshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wxshop" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="mine-img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wxshop" type="b2602c69:ProjectViewProjectNode" />
@@ -277,12 +286,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586440753119</updated>
-      <workItem from="1586440756681" duration="26280000" />
+      <workItem from="1586440756681" duration="64092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26280000" />
+    <option name="totallyTimeSpent" value="64092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -315,6 +324,42 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy</url>
+          <line>140</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy</url>
+          <line>123</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy</url>
+          <line>217</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy</url>
+          <line>202</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/common/config.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -337,36 +382,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/index.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2575">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/card/index.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/cate/index.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1300">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/mine-img/icon-f1.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-components.rnc">
       <provider selected="true" editor-type-id="text-editor">
@@ -375,19 +396,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="52" column="14" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/other/search.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="187" column="51" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/小米商城/xiaomi/src/components/Carousel.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/mine-img/icon-f1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/mine-img/icon-h5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/mine-img/icon-head.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/mine-img/user-logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/mine/index.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="189" column="11" lean-forward="true" selection-start-line="189" selection-start-column="11" selection-end-line="189" selection-end-column="11" />
+        <state relative-caret-position="192">
+          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
           <folding>
-            <element signature="e#90#192#0" />
-            <element signature="e#345#1339#0" />
-            <element signature="e#605#645#0" />
-            <element signature="e#1421#1445#0" />
-            <element signature="e#1623#1639#0" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-image#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -398,8 +445,8 @@
             <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#2;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#van-grid-item#2;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#van-grid-item#0;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-grid-item#1;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-grid-item#2;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-grid-item#3;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
@@ -411,6 +458,70 @@
             <element signature="n#van-grid-item#9;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-grid-item#10;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
             <element signature="n#van-grid-item#11;n#van-grid#0;n#div#2;n#div#0;n#template#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/card/index.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/cate/index.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1175">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/index.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="138" column="2" selection-start-line="138" selection-start-column="2" selection-end-line="138" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#template#0;n#!!top" />
+            <element signature="e#3863#4188#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/goods/goods_detail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="62" column="27" lean-forward="true" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <element signature="e#30#46#0" />
+            <element signature="e#38#228#0" />
+            <element signature="e#76#144#0" />
+            <element signature="e#130#174#0" />
+            <element signature="e#527#559#0" />
+            <element signature="e#534#1116#0" />
+            <element signature="e#558#798#0" />
+            <element signature="e#1689#1705#0" />
+            <element signature="e#1845#1861#0" />
+            <element signature="e#1469#1673#0" />
+            <element signature="e#1686#2062#0" />
+            <element signature="e#2368#2636#0" />
+            <element signature="e#2474#2716#0" />
+            <element signature="n#view#0;n#template#0;n#!!top" />
+            <element signature="n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#view#0;n#van-tab#0;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#divn#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#div#2;n#van-tab#1;n#van-tabs#0;n#template#0;n#!!top" />
+            <element signature="n#van-goods-action#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>

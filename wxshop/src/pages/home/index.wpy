@@ -89,11 +89,9 @@
           <van-grid-item icon="photo-o" text="购物车"  />
           <van-grid-item icon="photo-o" text="分类"  />
           <van-grid-item icon="photo-o" text="品牌"  />
-          <van-grid-item  >
-
-              <text solt="text">购物车</text>
+          <van-grid-item use-slot>
+              <div class="" @tap="goodLinkTo">商品详情</div>
           </van-grid-item>
-
       </van-grid>
 
 
@@ -140,9 +138,7 @@
 
   var self;
   wepy.page({
-    config: {
-      navigationBarTitleText: "test"
-    },
+
     hooks: {
       // Page 级别 hook, 只对当前 Page 的 setData 生效。
       "before-setData": function (dirty) {
@@ -231,7 +227,12 @@
           message: '加载中...',
           duration:0
         });
-      }
+      },
+        goodLinkTo(){
+            self.$navigate({
+                url: '/pages/goods/goods_detail'
+            })
+        }
     },
 
     created (){

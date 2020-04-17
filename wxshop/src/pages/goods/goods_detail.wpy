@@ -1,0 +1,266 @@
+<style lang="less">
+    swiper{
+        height: 240px;
+        image{
+            width: 375px;
+            height: 240px
+    }
+    }
+    van-cell-group{
+        van-cell{
+            .lb1{
+                color: red;
+                font-size: larger
+            }
+            .lb2{
+                color: gray;
+            }
+        }
+        .van-cell__value{
+            text-align: left;
+        }
+    }
+    van-tabs{
+        background-color: rgba(0,0,0,0);
+        van-tab{
+            font-size: 28rpx;
+
+            .text{
+                height: 100rpx;
+                width: 750rpx;
+                background-color: white;
+                padding-left: 35rpx;
+                line-height: 100rpx;
+            }
+            .titleValue{
+                .value{
+                    display: flex;
+                    height: 55rpx;
+                    line-height: 55rpx;
+                    width: 670rpx;
+                    margin: 0 auto;
+                    padding: 10rpx;
+                }
+                .valueTittle{
+                    color: grey;
+                    flex: 1;
+                    padding-left: 25rpx;
+                }
+                .valueDescribe{
+                    padding-left: 5rpx;
+                    color: black;
+                    flex: 1;
+                }
+            }
+        }
+    }
+    .van-cell__title{
+        padding-top: 30rpx;
+    }
+    .img{
+        height: 100%;
+        image{
+            display: block;
+            width: 750rpx;
+        }
+        image:nth-child(4){
+            height: 160rpx;
+        }
+        image:nth-child(5){
+            height: 1293.32rpx;
+        }
+        image:nth-child(6){
+            height: 392rpx;
+        }
+    }
+    .pinglun{
+        position: relative;
+        padding-bottom: 30rpx;
+    }
+    .van-tab__pane{
+        margin-bottom: 100rpx;
+    }
+    .personPhoto{
+        display: inline-block;
+        padding-left: 35rpx;
+        padding-top:30rpx;
+        image{
+            height: 60rpx;
+            width: 60rpx;
+            border-radius: 50%;
+        }
+    }
+    .comment{
+        display: flex;
+        .personName{
+            position: absolute;
+            top: 20rpx;
+            left: 105rpx;
+        }
+        .personAttitude{
+            position: absolute;
+            top: 50rpx;
+            left: 105rpx;
+
+        }
+        .commentTime{
+            position: absolute;
+            top: 20rpx;
+            right: 20rpx;
+
+        }
+    }
+    .van-icon {
+        position: absolute !important;
+        top: -100rpx;
+        right: 30rpx;
+
+    }
+    .van-cell {
+        padding: 0 35rpx !important;
+    }
+</style>
+<template>
+    <view>
+        <swiper  border="{{ false }}">
+            <template v-for="(img,index) in imgList" :key="index">
+                <swiper-item>
+                    <img :src="img.imgsrc" alt="">
+                </swiper-item>
+            </template>
+        </swiper>
+    </view>
+    <van-cell-group border="{{ false }}">
+        <van-cell title="朝天椒100g" label="绿柄红袍，少梓辛辣" border="{{ false }}"/>
+        <van-cell icon="share" border="{{ false }}" />
+        <van-cell use-slot border="{{ false }}">
+            <label class="lb1">￥4.8</label>
+            <label class="lb2">/份</label>
+        </van-cell>
+    </van-cell-group>
+    <van-tabs swipeable  border="{{ false }}">
+        <van-tab title="详情" use-slot>
+            <div class="text">基本信息</div>
+            <div class="titleValue">
+                <div class="value">
+                    <p class="valueTittle">产地</p>
+                    <p class="valueDescribe">海南海口</p>
+                </div>
+                <div class="value">
+                    <p class="valueTittle">净含量</p>
+                    <p class="valueDescribe">100g</p>
+                </div>
+                <div class="value">
+                    <p class="valueTittle">储存条件</p>
+                    <p class="valueDescribe">常温</p>
+                </div>
+            </div>
+            <div class="text">图片介绍</div>
+            <view class="img">
+                <image src="https://img.alicdn.com/imgextra/i3/263685747/O1CN01mTLO3O1sKAfaSS9kf_!!263685747.jpg_cy500i0q100.jpg_.webp"></image>
+                <image src="https://img.alicdn.com/imgextra/i3/263685747/O1CN01cE7PuM1sKAfcn7cNK_!!263685747.jpg_cy500i0q100.jpg_.webp"></image>
+                <image src="https://img.alicdn.com/imgextra/i1/263685747/O1CN01a4r6071sKAfaSS9mW_!!263685747.jpg_cy500i0q100.jpg_.webp"></image>
+                <image src="https://img.alicdn.com/imgextra/i1/263685747/O1CN01a4r6071sKAfaSS9mW_!!263685747.jpg_cy500i1q100.jpg_.webp"></image>
+                <image src="https://img.alicdn.com/imgextra/i3/2680068332/TB2L7U0XE6FK1Jjy0FpXXbFqVXa_!!2680068332.png"></image>
+                <image src="https://gw.alicdn.com/tfs/TB1hP6QiNv1gK0jSZFFXXb0sXXa-1125-588.jpg"></image>
+            </view>
+        </van-tab>
+        <van-tab title="评论(178)" use-slot>
+            <div class="pinglun">
+                <div class="personPhoto">
+                    <image src="https://img.yzcdn.cn/vant/cat.jpeg"></image>
+                </div>
+                <div class="comment">
+                    <div class="personName">转***1</div>
+                    <div class="commentTime">2020.3.30</div>
+                    <div class="personAttitude">好评</div>
+                </div>
+            </div>
+            <div class="pinglun">
+                <div class="personPhoto">
+                    <image src="https://img.yzcdn.cn/vant/cat.jpeg"></image>
+                </div>
+                <div class="comment">
+                    <div class="personName">转***1</div>
+                    <div class="commentTime">2020.3.30</div>
+                    <div class="personAttitude">好评</div>
+                </div>
+            </div>
+            <div class="pinglun">
+                <div class="personPhoto">
+                    <image src="https://img.yzcdn.cn/vant/cat.jpeg"></image>
+                </div>
+                <div class="comment">
+                    <div class="personName">转***1</div>
+                    <div class="commentTime">2020.3.30</div>
+                    <div class="personAttitude">好评</div>
+                </div>
+            </div>
+
+        </van-tab>
+    </van-tabs>
+    <van-goods-action>
+        <van-goods-action-icon
+                icon="chat-o"
+                text="客服"
+                @click="onClickIcon"
+        />
+        <van-goods-action-icon
+                icon="cart-o"
+                text="购物车"
+                @click="onClickIcon"
+        />
+        <van-goods-action-button
+                text="加入购物车"
+                type="warning"
+                @click="onClickButton"
+        />
+        <van-goods-action-button
+                text="立即购买"
+                @click="onClickButton"
+        />
+    </van-goods-action>
+</template>
+<script>
+
+    import wepy from '@wepy/core';
+    wepy.page({
+        data: {
+            imgList: [
+                {imgsrc:'https://img.alicdn.com/i2/263685747/O1CN01iypvjx1sKAfcn4nZl_!!263685747.jpg'},
+                {imgsrc:'https://img.alicdn.com/i3/263685747/O1CN01EjPLfb1sKAfanwugz_!!263685747.jpg'},
+                {imgsrc:'https://img.alicdn.com/i1/263685747/O1CN01UDp9qw1sKAfYqJM3a_!!263685747.jpg'},
+                {imgsrc:'https://img.alicdn.com/i1/263685747/O1CN01F0k9Hm1sKAfcW7Gc6_!!263685747.jpg'}
+            ],
+        },
+        methods:{
+            onClickIcon() {
+                Toast('点击图标');
+            },
+            onClickButton() {
+                Toast('点击按钮');
+            }
+        },
+
+
+
+    })
+</script>
+
+<config>
+{
+    navigationBarTitleText: "商品详情",
+    "usingComponents": {
+    "van-cell": "~@/vendor/vant/cell/index",
+    "van-cell-group": "~@/vendor/vant/cell-group/index",
+    "van-icon":"~@/vendor/vant/icon/index",
+    "van-tab": "~@/vendor/vant/tab/index",
+    "van-tabs": "~@/vendor/vant/tabs/index",
+    "van-image":"~@/vendor/vant/image/index",
+    "van-goods-action": "~@/vendor/vant/goods-action/index",
+    "van-goods-action-icon": "~@/vendor/vant/goods-action-icon/index",
+    "van-goods-action-button": "~@/vendor/vant/goods-action-button/index"
+
+    }
+}
+</config>
