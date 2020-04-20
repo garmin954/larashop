@@ -144,11 +144,11 @@ export default {
 
     },
     created () {
-        //可视窗口x,y坐标
-        console.log('this.$optionsthis.$optionsthis.$optionsthis.$options');
-        console.log(this);
-        this.busPos = {};
-        this.busPos['x'] = this.$options.globalData.ww * .85;
-        this.busPos['y'] = this.$options.globalData.hh * .85;
+        // //可视窗口x,y坐标
+        // console.log('this.$optionsthis.$optionsthis.$optionsthis.$options');
+        // console.log(this);
+        // this.busPos = {};
+        // this.busPos['x'] = this.$options.globalData.ww * .85;
+        // this.busPos['y'] = this.$options.globalData.hh * .85;
     }
 }
