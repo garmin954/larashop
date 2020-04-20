@@ -20,6 +20,7 @@
         "mews/captcha": "^3.0",
         "overtrue/easy-sms": "^1.1",
         "overtrue/laravel-wechat": "^5.0",
+        "overtrue/wechat": "^4.2",
         "tymon/jwt-auth": "dev-develop",
         "workerman/gateway-worker": "^3.0",
         "yansongda/pay": "^2.8"

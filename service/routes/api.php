@@ -461,4 +461,7 @@ Route::namespace('Weixin')->prefix('weixin')->group(function(){
     Route::get('/goods/get_group_to_home', 'GoodsController@getGroupToHome');
     Route::any('/goods/get_goods_list', 'GoodsController@getGoodsToHome');
     Route::post('/goods/get_goods_class', 'GoodsController@getGoodsClass');
+
+    Route::post('/auth/login', 'AuthController@login');
+
 });
