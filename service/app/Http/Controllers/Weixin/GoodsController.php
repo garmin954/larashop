@@ -32,18 +32,34 @@ class GoodsController extends BaseController
         $page_index = $request->post('page', 1);
         $goods_list = $goodsModel->getGoodsToHome($page_index, 10);
         $total = $goodsModel->getGoodsCountToHome();
-        $total = 3;
         return $this->responseData('', 1, compact('goods_list', 'total'));
     }
-    
-    
+
+
     public function getGoodsClass(Request $request)
     {
         $pid = $request->post('pid', 0);
         $goodsClassModel = new GoodsClass();
 
         $cate_list = $goodsClassModel->get_goods_class_list();
-        
+
         return $this->responseData('', 1, compact('cate_list'));
+    }
+
+
+    public function searchGoodsList(Request $request)
+    {
+        $name = $request->get('name', '');
+        if ($name){
+            $goodsModel = new Goods();
+            $page_index = $request->post('page', 1);
+            $goods_list = $goodsModel->getGoodsToHome($page_index, 10);
+            $total = $goodsModel->getGoodsCountToHome();
+            return $this->responseData('', 1, compact('goods_list', 'total'));
+        }
+
+        $goods_list = Goods::normal()->like('goods_name', '频')->page($page_index, 10)->get();
+        return $this->responseData('', 1, compact('goods_list'));
+
     }
 }

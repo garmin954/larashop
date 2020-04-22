@@ -464,4 +464,7 @@ Route::namespace('Weixin')->prefix('weixin')->group(function(){
 
     Route::post('/auth/login', 'AuthController@login');
 
+    Route::get('/goods/search_goods_list', 'GoodsController@searchGoodsList');
+
+
 });

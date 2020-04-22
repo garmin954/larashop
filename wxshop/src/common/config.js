@@ -1,5 +1,5 @@
 // const base_url = "https://api.shop.org";
-const base_url = "http://api.jietuma.com";
+const base_url = "https://api.jietuma.com";
 
 
 let api = {
@@ -8,6 +8,7 @@ let api = {
     get_goods_list : `goods/get_goods_list`, // 商品列表
     get_goods_class_list : `goods/get_goods_class`, // 商品分类
     login : `auth/login`, // 登录
+    search_goods_list : `goods/search_goods_list`, // 搜索商品
 
 }
 

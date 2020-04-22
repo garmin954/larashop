@@ -88,11 +88,12 @@
 
         <!--商品列表  -->
         <div v-if="!openHistory" class="goods-list-box body-container">
-            <gm-goods v-for="(goods, index) in goodsList"
-                      :key="index"
-                      height="450"
-                      :goods="goods"
-            ></gm-goods>
+            <gm-skeleton-goods></gm-skeleton-goods>
+<!--            <gm-goods v-for="(goods, index) in goodsList"-->
+<!--                      :key="index"-->
+<!--                      height="450"-->
+<!--                      :goods="goods"-->
+<!--            ></gm-goods>-->
         </div>
         
         <!--加载-->
@@ -153,7 +154,7 @@
                 self.openHistory = true;
             },
             getGoodsList(){
-                self.$app.$get('get_goods_list', {page: self.page}).then(response=>{
+                self.$app.$get('search_goods_list', {page: self.page}).then(response=>{
                     if (response.data.code > 0) {
                         self.goodsList = response.data.data.goods_list;
                         self.totalPage = response.data.data.goods_count;
@@ -196,7 +197,9 @@
         "van-cell": "~@/vendor/vant/cell/index",
         "van-cell-group": "~@/vendor/vant/cell-group/index",
         "van-sticky": "~@/vendor/vant/sticky/index",
-        <!--"van-popup": "~@/vendor/vant/popup/index"-->
+        "gm-skeleton-goods" : "~@/components/skeleton/goods-item"
+
+    <!--"van-popup": "~@/vendor/vant/popup/index"-->
     },
     "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
     "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->

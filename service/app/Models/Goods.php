@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\AttrSpec;
 use App\Tools\Model as BaseModel;
 
-class Goods extends Model
+class Goods extends Base
 {
     use BaseModel;
     protected $table = "goods"; //指定表
@@ -152,5 +152,10 @@ class Goods extends Model
     {
         return self::normal()->count();
     }
+
+
+
+
+
 
 }
