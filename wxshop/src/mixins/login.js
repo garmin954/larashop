@@ -1,4 +1,4 @@
-import Stroge from '@/common/storge'
+import Stroge from '@/common/storage'
 
 export default {
     data: {

@@ -17,6 +17,7 @@ class Base extends Model
     public function scopePage($query, $page, $limit)
     {
         $offset = ($page - 1) * $limit;
-        return $query->offset($offset)->limit($limit);
+        return $query->offset($offset)->limit($limit)->get();
     }
+
 }

@@ -73,7 +73,7 @@
 
 <script>
     import wepy from '@wepy/core';
-    import Storge from '@/common/storge'
+    import Storage from '@/common/storage'
     import Toast from "@/vendor/vant/toast/toast"
     import $wxLogin from '@/mixins/login'
 
@@ -101,9 +101,9 @@
                 }).then(response=>{
                     if (response.data.code>0){ // 登录成功
                         // token
-                        Storge.set('token', response.data.data.token);
-                        Storge.set('user_info', response.data.data.token);
-                        console.log(Storge.get('token'));
+                        Storage.set('token', response.data.data.token);
+                        Storage.set('user_info', response.data.data.token);
+                        console.log(Storage.get('token'));
                         Toast('登录成功！');
                         self.show = false
                         wx.showTabBar()
@@ -142,7 +142,7 @@
             console.log(self);
             // setTimeout(function () {
             //     wx.hideTabBar()
-            //     console.log(Storge.get('token'));
+            //     console.log(Storage.get('token'));
             //     self.$app.getCode();
             // }, 500)
 

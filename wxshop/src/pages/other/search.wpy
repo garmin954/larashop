@@ -54,9 +54,10 @@
                     placeholder="请输入搜索关键词"
                     shape="round"
                     use-action-slot
+                    @change="onChangeSearch"
                     @clear="onCancelSearch"
             >
-                <view slot="action" @tap="onClickSearch">搜索</view>
+                <view slot="action" @tap="onClickSearch()">搜索</view>
             </van-search>
         </div>
 
@@ -72,7 +73,7 @@
             <van-cell title="搜索历史">
                 <van-icon v-if="!isDel" name="delete" @tap="isDel=true" />
                 <div v-else>
-                    <div class="del-all" @tap="historyTag=[]">全部删除</div>
+                    <div class="del-all" @tap="delAllSearch">全部删除</div>
                     <div class="middle"></div>
                     <div class="over" @tap="isDel=false">完成</div>
                 </div>
@@ -88,12 +89,14 @@
 
         <!--商品列表  -->
         <div v-if="!openHistory" class="goods-list-box body-container">
-            <gm-skeleton-goods></gm-skeleton-goods>
-<!--            <gm-goods v-for="(goods, index) in goodsList"-->
-<!--                      :key="index"-->
-<!--                      height="450"-->
-<!--                      :goods="goods"-->
-<!--            ></gm-goods>-->
+            <gm-goods v-if="!skeletonShow"
+                      v-for="(goods, index) in goodsList"
+                      :key="index"
+                      height="450"
+                      :goods="goods"
+            ></gm-goods>
+            <gm-skeleton-goods  v-if="skeletonShow"></gm-skeleton-goods>
+
         </div>
         
         <!--加载-->
@@ -107,67 +110,85 @@
 
 <script>
     import wepy from '@wepy/core'
+    import Storage from '@/common/storage'
 
     var self;
     wepy.page({
         data:{
-            historyTag:[
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-                '医用口罩1','小米10','苹果电脑','抱枕','ipad','最贵的鞋子',
-            ],
+            historyTag:[],
             isDel: false,
             openHistory: true,
             searchVal:'',
             showSelect:false,
             goodsList:[],
             totalPage:0,
+            skeletonShow:true, // 显示商品骨架
         },
+
         methods:{
-            // 点击标签
+            // 点击标签 搜索|删除
             onClickTag(index){
-                console.log('self.searchVal');
                 if (self.isDel){
                     self.historyTag.splice(index, 1)
+                    self.storageSearchLog();
                 }else{
                     self.searchVal = self.historyTag[index]
-                    self.onClickSearch();
+                    self.onClickSearch(true);
                 }
             },
-
+            delAllSearch(){
+                self.historyTag = [];
+                self.storageSearchLog();
+            },
             // 点击搜索
-            onClickSearch(){
+            onClickSearch(notSave=false){
+                self.storageSearchLog(notSave);
                 self.openHistory = false;
                 self.getGoodsList();
             },
+            // 取消搜索内容
             onCancelSearch(){
-                console.log('quexiao');
                 self.openHistory = true;
             },
+            // 监听搜索内容
+            onChangeSearch(e){
+
+                self.searchVal = e.$wx.detail
+            },
+            // 搜索商品
             getGoodsList(){
-                self.$app.$get('search_goods_list', {page: self.page}).then(response=>{
+                self.$app.$get('search_goods_list', {page: 1, name: self.searchVal}).then(response=>{
                     if (response.data.code > 0) {
                         self.goodsList = response.data.data.goods_list;
                         self.totalPage = response.data.data.goods_count;
                     }
+                    setTimeout(res=> self.skeletonShow = false, 500)
+
+                    console.log(self.goodsList);
                 }).catch(error=>{
                     
                 });
-
             },
+            // 存储搜索
+            storageSearchLog(notSave = false) {
+                console.log(self.searchVal && !notSave);
+                if (self.searchVal && !notSave){
+                    self.historyTag.push(self.searchVal)
+                    Storage.set('search_log', self.historyTag)
+                }
+            },
+            // 获取搜索历史
+            getSearchLog(){
+                if (Storage.get('search_log')){
+                    self.historyTag = Storage.get('search_log');
+                }
+            }
         },
 
         onLoad(query) {
             self = this;
+            self.getSearchLog();
+
         },
         // 上拉
         onReachBottom: function () {

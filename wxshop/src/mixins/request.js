@@ -1,8 +1,8 @@
 import Config from '@/common/config'
-import Storge from '@/common/storge'
+import Storage from '@/common/storage'
 
 // 获取localStorage 内token
-const token = Storge.get('token');
+const token = Storage.get('token');
 var Authorizations = '';
 if(token){
    Authorizations = 'Bearer '+token;

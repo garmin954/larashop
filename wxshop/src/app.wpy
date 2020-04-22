@@ -47,7 +47,6 @@ wepy.app({
 <config>
 {
     pages: [
-        'pages/other/search',  <!-- 搜索 -->
 
         'pages/home/index',  <!-- 首页 -->
         'pages/mine/index',  <!-- 个人中心 -->
@@ -55,6 +54,8 @@ wepy.app({
         'pages/card/index',  <!-- 购物车 -->
         'pages/other/login',  <!-- 登录 -->
         'pages/goods/goods_detail',  <!-- 商品详情 -->
+        'pages/other/search',  <!-- 搜索 -->
+
 
     ],
     window: {
