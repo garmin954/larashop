@@ -12,7 +12,7 @@ const get = (key) => {
     let limit = wx.getStorageSync(`${key}_time`);
     if (timestamp < limit){
 
-        return     wx.getStorageSync(key);
+        return wx.getStorageSync(key);
     }else{
         destory(key);
     }

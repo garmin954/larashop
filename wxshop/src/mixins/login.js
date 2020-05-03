@@ -1,4 +1,5 @@
 import Stroge from '@/common/storage'
+import {initCartGoods} from '@/mixins/cart'
 
 export default {
     data: {
@@ -46,18 +47,21 @@ export default {
         },
         // 是否登录
         isLoginAction() {
-           if ( Stroge.get('token')){
+
+            if ( Stroge.get('token')){
                this.isLogin = true
            }else {
                this.isLogin = false
            }
         },
-
-
+        // 初始化数据
+        initData() {
+            initCartGoods(this.isLogin);
+        }
     },
     created () {
-        console.log('code in mixin');
         this.isLoginAction();
         this.getCode()
+        this.initData();
     }
 }

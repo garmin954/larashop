@@ -1,0 +1,161 @@
+<style lang="less">
+    .bus {
+        position: fixed;
+        left: 80%;
+        top: 85%;
+        /*background: #fff;*/
+        border-radius: 50%;
+    }
+
+    .bus image {
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -4px;
+    }
+
+    .count {
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 12px;
+        background: #ff4611;
+        border-radius: 10px;
+        color: #fff;
+        position: absolute;
+        left: 34px;
+        top: 0;
+    }
+
+    .scale {
+        background: rgba(120, 188, 255, 0.3);
+        border: 1px solid rgba(0, 116, 255, 0.4);
+    }
+
+    .scale image {
+        transform: scale(1.2);
+    }
+
+    .good_box {
+        width: 80rpx;
+        height: 80rpx;
+        position: fixed;
+        border-radius: 50%;
+        overflow: hidden;
+        left: 50%;
+        top: 50%;
+        z-index: +99;
+        /*border: 1px solid #fff;*/
+        /*background: rgba(120, 188, 255, 0.2);*/
+    }
+
+    .good_box image {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<template>
+    <div>
+        <!-- 购物车图标 和 角标数字-->
+        <view class="bus" @tap="$app.goToNavigate('/pages/cart/index', 'tabbar')">
+            <van-icon name="shopping-cart" color="#f69758" size="50" :info="count" />
+        </view>
+
+        <!-- 加购物车时飞的图片 -->
+        <view class="good_box" hidden="{{hide_good_box}}"  :style="{left:bus_x+'px', top:bus_y+'px'}">
+            <van-icon name="goods-collect" color="#f34b25" size="27" />
+        </view>
+    </div>
+</template>
+
+<script>
+
+    import wepy from '@wepy/core';
+    import cart from "../../mixins/cart";
+
+    wepy.component({
+        mixins:[cart],
+        props:{
+            hideCount:{
+                default:true,
+                type:Boolean,
+            },
+            count:{
+                default:0,
+
+            }
+        },
+        data:{
+            bus_x:0, // 商品点击x坐标
+            bus_y:0, // 商品点击y坐标
+            hide_good_box:true, // 显示商品点
+        },
+        methods:{
+            busAnimation: function() {
+                this.needAni = true;
+
+                setTimeout(function() {
+                    this.needAni = false;
+                }, 500);
+            },
+            touchOnGoods: function(e, goods_info={}) {
+                // 判断是否登录
+                if (!this.$app.isLogin())return;
+
+                // 如果good_box正在运动
+                if (!this.hide_good_box) return;
+                // 添加到购物车
+                this.modifyCartGoods(goods_info);
+                this.finger = {};
+                let topPoint = {};
+
+                this.finger['x'] = e.touches["0"].clientX;
+                this.finger['y'] = e.touches["0"].clientY;
+
+                if (this.finger['y'] < this.busPos['y']) {
+                    topPoint['y'] = this.finger['y'] - 150;
+                } else {
+                    topPoint['y'] = this.busPos['y'] - 150;
+                }
+                topPoint['x'] = Math.abs(this.finger['x'] - this.busPos['x']) / 2 + this.finger['x'];
+                this.linePos = this.bezier([this.finger, topPoint, this.busPos], 30);
+                this.startAnimation();
+            },
+            startAnimation: function() {
+                var index = 0,
+                    self = this,
+                    bezier_points = self.linePos['bezier_points'];
+                self.hide_good_box = false;
+                self.bus_x = self.finger['x'];
+                self.bus_y = self.finger['y'];
+                this.timer = setInterval(function() {
+                    index++;
+
+                    self.bus_x = bezier_points[index]['x'];
+                    self.bus_y = bezier_points[index]['y'];
+                    if (index >= 28) {
+                        clearInterval(self.timer);
+
+                        self.hide_good_box = true;
+                        self.hideCount = false;
+                        self.count = self.count += 1;
+                    }
+                }, 33);
+            }
+        }
+    })
+</script>
+
+<config>
+    {
+        usingComponents:{
+        "van-icon": "~@/vendor/vant/icon/index",
+        }
+    }
+</config>

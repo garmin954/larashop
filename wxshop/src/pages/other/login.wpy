@@ -71,6 +71,10 @@
         },
         methods:{
             bindGetUserInfo(res){
+                if ((typeof res.$wx.detail.userInfo)  === 'undefined'){
+                    Toast('拒绝授权')
+                    return false;
+                }
                 Toast.loading({
                     mask: true,
                     message: '登录中...',

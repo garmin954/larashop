@@ -1,5 +1,6 @@
 import Config from '@/common/config'
 import Storage from '@/common/storage'
+import Tools from '@/common/tools'
 
 // 获取localStorage 内token
 const token = Storage.get('token');
@@ -21,6 +22,7 @@ export default {
       return this.requestCore(url, data, "POST");
     },
 
+    // 请求核心
     requestCore(url, data, method){
       let self = this;
       let promise = new Promise((resolve, reject) => {
@@ -31,7 +33,7 @@ export default {
           header: {'content-type': 'applicction/json', 'Authorization': Authorizations}, //  或者是 header{'content-type':'application/x-www-form-urlencoded'},
           success: res => {
             if (res.statusCode === 401){
-              self.goToLogin()
+              Tools.goToLogin();
             }
             if (res.statusCode === 200) {
               resolve(res)
@@ -46,12 +48,6 @@ export default {
       })
       return promise
     },
-
-    goToLogin(){
-      this.$navigate({
-        url: '/pages/other/login'
-      })
-    }
   },
   created () {
     console.log('http in mixin');

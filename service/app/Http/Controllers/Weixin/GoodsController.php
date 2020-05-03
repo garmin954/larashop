@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Weixin;
 use App\Models\Goods;
 use App\Models\GoodsClass;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 
 class GoodsController extends BaseController
@@ -67,4 +68,6 @@ class GoodsController extends BaseController
 
         return $this->responseData('', 0);
     }
+
+
 }

@@ -14,3 +14,515 @@ Content-Length: 82
 {"session_key":"7AWB4nIulN18cgi2AKM7zw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
 --------
 NULL  
+[2020-05-01T13:52:41.925984+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=0233jXE904qrPz1nQHH90MzaF903jXE3&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 05:52:41 GMT
+Content-Length: 82
+
+{"session_key":"VjOWxezTgKulXt2l3H2ZQQ==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T13:53:58.957120+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=0233jXE904qrPz1nQHH90MzaF903jXE3&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 05:53:58 GMT
+Content-Length: 80
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: 0gacs.5ce-8VikBa ]"}
+--------
+NULL  
+[2020-05-01T13:55:56.757486+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=0233jXE904qrPz1nQHH90MzaF903jXE3&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 05:55:56 GMT
+Content-Length: 80
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: 2gacpFwgE-IcqAWa ]"}
+--------
+NULL  
+[2020-05-01T13:56:50.963122+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=0233jXE904qrPz1nQHH90MzaF903jXE3&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 05:56:50 GMT
+Content-Length: 80
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: 3gacm24ce-a612oa ]"}
+--------
+NULL  
+[2020-05-01T14:01:19.407694+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=0233jXE904qrPz1nQHH90MzaF903jXE3&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:01:19 GMT
+Content-Length: 76
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: aGacgXXBe-pf ]"}
+--------
+NULL  
+[2020-05-01T14:02:31.701335+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023h29Lg2mXlnG0CLyMg2SSeLg2h29Lq&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:02:31 GMT
+Content-Length: 83
+
+{"session_key":"pjSEHHQQqQK6TN+Wm27J\/Q==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:03:03.141327+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023h29Lg2mXlnG0CLyMg2SSeLg2h29Lq&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:03:03 GMT
+Content-Length: 79
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: bGacpZFFE-Tii76 ]"}
+--------
+NULL  
+[2020-05-01T14:03:14.688306+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023TgMPp0WjPdk1FjyRp0HgwPp0TgMPT&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:03:14 GMT
+Content-Length: 83
+
+{"session_key":"pjSEHHQQqQK6TN+Wm27J\/Q==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:08:49.652167+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023TgMPp0WjPdk1FjyRp0HgwPp0TgMPT&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:08:49 GMT
+Content-Length: 81
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: DGacvNLnRa-HFAQpA ]"}
+--------
+NULL  
+[2020-05-01T14:09:14.540180+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023TgMPp0WjPdk1FjyRp0HgwPp0TgMPT&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:09:14 GMT
+Content-Length: 81
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: eGaczQaLRa-8mCZQa ]"}
+--------
+NULL  
+[2020-05-01T14:12:39.966405+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023oMzyi1OIXDr0qSvBi1TpAyi1oMzyz&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:12:39 GMT
+Content-Length: 82
+
+{"session_key":"FiAGzJRdysB1sQ6ai6kCSA==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:12:59.455185+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033UBLvI0aCJ5e2hAovI0nMRvI0UBLvr&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:12:59 GMT
+Content-Length: 82
+
+{"session_key":"Wna7TjgfyXvEQMSdteGO3A==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:14:55.334427+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033Tvx1t0K0sSi1zqA4t0AoJ1t0Tvx1Z&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:14:55 GMT
+Content-Length: 82
+
+{"session_key":"Wna7TjgfyXvEQMSdteGO3A==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:15:38.666253+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033Tvx1t0K0sSi1zqA4t0AoJ1t0Tvx1Z&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:15:38 GMT
+Content-Length: 81
+
+{"errcode":40163,"errmsg":"code been used, hints: [ req_id: hGac67aLRa-c1WxEa ]"}
+--------
+NULL  
+[2020-05-01T14:21:12.155914+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023CAAB11CdkAS1kxdD11BPzB11CAABh&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:21:12 GMT
+Content-Length: 82
+
+{"session_key":"oXs8M4vctB3+OQR7bC8Mbg==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T14:57:32.363541+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023oPDPS15JAV115M2RS1FOPPS1oPDP4&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 06:57:32 GMT
+Content-Length: 83
+
+{"session_key":"9k+NvWz2Ln\/VwC1spVZLEA==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T15:41:25.088198+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32__q5slBR10FZMaUmkpbArJUuC5FGqOlu4obpa0Z2YorLVTyrNT027_THVQGXRmXpkZmHMZ-fPBVSSeQvo8-FUXuklhj-mfBZOHvcgXtBekD4R-jemlL6Y42LTRVTmF8BAqeKOoliaVOHT9oqcHURbAGAXKH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043m2d6X0g7J5X1e564X08fY5X0m2d6y&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 07:41:25 GMT
+Content-Length: 82
+
+{"session_key":"O3AyAyTgJLQYRB4m2ttHlw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T17:41:01.475451+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_UxXs1VTQdIkCeFI1xJuz3Li1ZtfALJWptwgOXx5thFDm5BGLsUWL9QmFMDYCGxhGAp0DKVqPPR4w0JBjAN7HA1I6nn0EdFEUF1L_w_oqYLVKtny0sFfsJDnCdsaA06zgknGCh35nFyeQGjxLBGEcAAAEJH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043c530a0NUP5A18vzX90JNVZ90c5300&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 09:41:01 GMT
+Content-Length: 82
+
+{"session_key":"Kmg73lLly9eDib1zXjYwgg==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T18:45:21.834398+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_UxXs1VTQdIkCeFI1xJuz3Li1ZtfALJWptwgOXx5thFDm5BGLsUWL9QmFMDYCGxhGAp0DKVqPPR4w0JBjAN7HA1I6nn0EdFEUF1L_w_oqYLVKtny0sFfsJDnCdsaA06zgknGCh35nFyeQGjxLBGEcAAAEJH&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033GpHGz1i1MN90TkuHz1wRtGz1GpHGd&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 10:45:21 GMT
+Content-Length: 82
+
+{"session_key":"nww7kBb+O4707GE+xPVxow==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T23:34:20.085956+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Ga-c4jmlPduhvYoY3XYGPgZUn5pbAZ5z8baQV6_FlPs8iuSHZHZTiwKmQjqtGuLj73syn_A35Ewgf4B3VLfFOZXIfp-eN3AgbzaFL4rSvn-_3JjphI3Krvk9GNsVyvWkhpY72VKDTKrphNaANUPgAJAIPK&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043037Ni0yk0Iq1N2wMi0izQMi0037Nc&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 15:34:20 GMT
+Content-Length: 83
+
+{"session_key":"0YNhea0\/2ANUIcmsXV5W+w==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-01T23:38:44.340228+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Ga-c4jmlPduhvYoY3XYGPgZUn5pbAZ5z8baQV6_FlPs8iuSHZHZTiwKmQjqtGuLj73syn_A35Ewgf4B3VLfFOZXIfp-eN3AgbzaFL4rSvn-_3JjphI3Krvk9GNsVyvWkhpY72VKDTKrphNaANUPgAJAIPK&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023Xp8dn1YFxyo0yJQbn16Z9dn1Xp8dz&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Fri, 01 May 2020 15:38:44 GMT
+Content-Length: 83
+
+{"session_key":"auSYezkh6u\/3i83Uu3kQXg==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T15:06:30.309392+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Liq5sOjO3MRZAISJbGqXRZhNgyAIHZESfY6Op9NX2wJNAMGH-ZwdoNGB2oqX7jUDtsKPixLFfEccpTTTLMX923Is14WihHj5QBQo8L-PkzIIvGy58_xrREczErrQ5BncrI1tQp-CVldtpoZNRQEeADAYXL&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043HzSBz1iN5Sc0qRZzz1NEZBz1HzSB0&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 07:06:30 GMT
+Content-Length: 78
+
+{"errcode":40029,"errmsg":"invalid code, hints: [ req_id: ChbcFAMre-R8WkWa ]"}
+--------
+NULL  
+[2020-05-03T15:06:43.777658+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Liq5sOjO3MRZAISJbGqXRZhNgyAIHZESfY6Op9NX2wJNAMGH-ZwdoNGB2oqX7jUDtsKPixLFfEccpTTTLMX923Is14WihHj5QBQo8L-PkzIIvGy58_xrREczErrQ5BncrI1tQp-CVldtpoZNRQEeADAYXL&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033bHTG713Q7kP1Z3MI71PFXG71bHTGR&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 07:06:43 GMT
+Content-Length: 82
+
+{"session_key":"wIsYf55XtjrHctldFbyxsw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T16:26:35.960759+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Liq5sOjO3MRZAISJbGqXRZhNgyAIHZESfY6Op9NX2wJNAMGH-ZwdoNGB2oqX7jUDtsKPixLFfEccpTTTLMX923Is14WihHj5QBQo8L-PkzIIvGy58_xrREczErrQ5BncrI1tQp-CVldtpoZNRQEeADAYXL&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033slzmm1iXkIn0ppnkm10ismm1slzmA&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 08:26:35 GMT
+Content-Length: 82
+
+{"session_key":"H1GDh7jz9m0H10r9sIEPCA==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T19:01:45.843158+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_RF3D5ATSHNlCWw6V8_erpf6y5LX9u-e1m7p-z42BUsY97hqvmOEYLT_EzcmZFzNarlnamX8o7S5YgTvLif0yILA0GqRnlVHJgYYZ5mv71CkO9iqMRdSG4asn_Hnx7bw5z2FEwf33JItsR0L2EYXhAJAKED&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043KLYW326HTmQ00iuY322DYW32KLYWw&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 11:01:45 GMT
+Content-Length: 82
+
+{"session_key":"K5OEajzzAhZ0raj2yanKzw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T19:02:27.644399+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_RF3D5ATSHNlCWw6V8_erpf6y5LX9u-e1m7p-z42BUsY97hqvmOEYLT_EzcmZFzNarlnamX8o7S5YgTvLif0yILA0GqRnlVHJgYYZ5mv71CkO9iqMRdSG4asn_Hnx7bw5z2FEwf33JItsR0L2EYXhAJAKED&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=023Y6KT52bo0QO0thuU52pKTT52Y6KTR&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 11:02:27 GMT
+Content-Length: 82
+
+{"session_key":"K5OEajzzAhZ0raj2yanKzw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T19:04:07.076006+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_RF3D5ATSHNlCWw6V8_erpf6y5LX9u-e1m7p-z42BUsY97hqvmOEYLT_EzcmZFzNarlnamX8o7S5YgTvLif0yILA0GqRnlVHJgYYZ5mv71CkO9iqMRdSG4asn_Hnx7bw5z2FEwf33JItsR0L2EYXhAJAKED&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033lVhQb02qhey1CqrPb0KwkQb0lVhQ1&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 11:04:06 GMT
+Content-Length: 82
+
+{"session_key":"FLdtocHlkg0l14Z5k8gCzg==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T19:04:45.835548+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_RF3D5ATSHNlCWw6V8_erpf6y5LX9u-e1m7p-z42BUsY97hqvmOEYLT_EzcmZFzNarlnamX8o7S5YgTvLif0yILA0GqRnlVHJgYYZ5mv71CkO9iqMRdSG4asn_Hnx7bw5z2FEwf33JItsR0L2EYXhAJAKED&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033hswoH1ntnP206wbpH196toH1hswoQ&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 11:04:45 GMT
+Content-Length: 82
+
+{"session_key":"FLdtocHlkg0l14Z5k8gCzg==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-03T19:09:19.920746+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_RF3D5ATSHNlCWw6V8_erpf6y5LX9u-e1m7p-z42BUsY97hqvmOEYLT_EzcmZFzNarlnamX8o7S5YgTvLif0yILA0GqRnlVHJgYYZ5mv71CkO9iqMRdSG4asn_Hnx7bw5z2FEwf33JItsR0L2EYXhAJAKED&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033WHkHd0LHGWv10WTJd02mcHd0WHkHf&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 11:09:19 GMT
+Content-Length: 82
+
+{"session_key":"K5OEajzzAhZ0raj2yanKzw==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-04T00:27:00.526740+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Mc1ORU-W11FbdL1A9AN0q2y0hl9Wd6xO4_1VKOB_JD6d42nFJZNYAfOk5vSFyOXOfnzhwjwoe8mGLa4g1HMvUh6vZUAIg2KmAPlJgAxxiI5pB-zK_9WVceaF8TfT6VEcfCAPKkydOSi-gSfDVICbAEAIVP&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033yGoyG04i0Bg2AenyG006EyG0yGoyt&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 16:26:59 GMT
+Content-Length: 82
+
+{"session_key":"fAoMmQYRCS2D7r+KrpXglQ==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-04T00:35:01.872929+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Mc1ORU-W11FbdL1A9AN0q2y0hl9Wd6xO4_1VKOB_JD6d42nFJZNYAfOk5vSFyOXOfnzhwjwoe8mGLa4g1HMvUh6vZUAIg2KmAPlJgAxxiI5pB-zK_9WVceaF8TfT6VEcfCAPKkydOSi-gSfDVICbAEAIVP&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=043IuRVk0ebc9p1YbATk0gSBVk0IuRVd&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 16:35:01 GMT
+Content-Length: 82
+
+{"session_key":"rzCN8daJgsWvCRMxWgps1Q==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  
+[2020-05-04T00:35:37.092556+08:00] EasyWeChat.DEBUG: >>>>>>>>
+GET /sns/jscode2session?access_token=32_Mc1ORU-W11FbdL1A9AN0q2y0hl9Wd6xO4_1VKOB_JD6d42nFJZNYAfOk5vSFyOXOfnzhwjwoe8mGLa4g1HMvUh6vZUAIg2KmAPlJgAxxiI5pB-zK_9WVceaF8TfT6VEcfCAPKkydOSi-gSfDVICbAEAIVP&appid=wx8ee1d2607ce3dd67&secret=962a13257cae31acd2b9a2cc8077e9d6&js_code=033uFWq21dtQiS1OACr21yy8r21uFWqE&grant_type=authorization_code HTTP/1.1
+Host: api.weixin.qq.com
+User-Agent: GuzzleHttp/6.4.1 curl/7.58.0 PHP/7.2.22-1+ubuntu18.04.1+deb.sury.org+1
+
+
+<<<<<<<<
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/plain
+Date: Sun, 03 May 2020 16:35:36 GMT
+Content-Length: 82
+
+{"session_key":"rzCN8daJgsWvCRMxWgps1Q==","openid":"oaJ1V48dOe2Vh_kjl3sfesTDL57k"}
+--------
+NULL  

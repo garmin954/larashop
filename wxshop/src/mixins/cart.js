@@ -1,27 +1,62 @@
+import Storage from '@/common/storage'
+import request from '@/mixins/request'
+
+var self;
+// 如果登录了并且没有购物车缓存就获取
+
+export function initCartGoods(isLogin) {
+    let cart_data = Storage.get('cart_data');
+    console.log('cart_datacart_datacart_data1');
+
+    console.log(!cart_data);
+    console.log('cart_datacart_datacart_data2');
+
+    console.log(isLogin);
+    console.log('cart_datacart_datacart_data3');
+
+
+    if (isLogin && !cart_data){
+        console.log(isLogin && cart_data == 'undefined');
+
+        // 获取购物车数据
+        request.methods.$post('get_cart_list').then(response=>{
+            console.log(response);
+        }).catch(error=>{
+            console.log(error);
+
+        })
+    }
+}
 export default {
     data: {
-        hideCount: true, //角标初始是隐藏的
-        count: 0, //角标数
-        hide_good_box: true,
-        feiBox: "",
-        imgUrls:{}
+        windowWidth:0,
+        windowHeight:0,
+        busPos: {},
+        cartData:{
+            list:[],
+            count:0,
+        },
     },
     methods: {
+        // 获取屏幕
         screenSize (){
             var self = this;
             wx.getSystemInfo({
                 success: function (res) {
                     //可视窗口宽度
-                    var ww = res.windowWidth;
+                    self.windowWidth = res.windowWidth;
                     //可视窗口高度
-                    var hh = res.windowHeight;
-                    self.$options.globalData.ww = ww;
-                    self.$options.globalData.hh = hh;
+                    self.windowHeight = res.windowHeight;
+                    self.busPos = {
+                        x : self.windowWidth * 0.9,
+                        y : self.windowHeight * 0.9
+                    }
                 }
             })
         },
-
+        // 获取动画轨道数组
         bezier(points, times){
+            let self = this;
             // 0、以3个控制点为例，点A,B,C,AB上设置点D,BC上设置点E,DE连线上设置点F,则最终的贝塞尔曲线是点F的坐标轨迹。
             // 1、计算相邻控制点间距。
             // 2、根据完成时间,计算每次执行时D在AB方向上移动的距离，E在BC方向上移动的距离。
@@ -74,81 +109,63 @@ export default {
                 var point_F = {};
                 point_F['x'] = dist_DF * Math.cos(radius_DE) + point_D['x'];
                 point_F['y'] = dist_DF * Math.sin(radius_DE) + point_D['y'];
+                // 如果商品点和购物车x距离在50内就直线向下
+                if (Math.abs(self.busPos.x -  points[0].x) < 50){
+                    console.log('相差小于50')
+                    point_F['x'] = self.busPos.x;
+                    // Math.abs(point_F['y']) > self.busPos.y
+
+                    // 自己算好了
+                    let distance = Math.abs(point_F['y'] - self.busPos.y);
+                    let segment = distance / times;
+                    point_F['y'] =  point_F['y'] + segment*i;
+                }
+
                 bezier_points.push(point_F);
             }
             return {
                 'bezier_points': bezier_points
             };
         },
-        //点击商品触发的事件
-        touchOnGoods(e) {
-            //把点击每一项的对应的商品图保存下来，就是飞向购物车的图片
-            this.setData({
-                feiBox: this.data.imgUrls[e.currentTarget.dataset.idx]
-            })
-            // 如果good_box正在运动
-            if (!this.data.hide_good_box) return;
-            //当前点击位置的x，y坐标
-            this.finger = {};
-            var topPoint = {};
-            this.finger['x'] = e.touches["0"].clientX;
-            this.finger['y'] = e.touches["0"].clientY - 20;
-            if (this.finger['y'] < this.busPos['y']) {
-                topPoint['y'] = this.finger['y'] - 150;
-            } else {
-                topPoint['y'] = this.busPos['y'] - 150;
-            }
+        // 修改购物车商品
+        modifyCartGoods(goods_info,nums=1,type='add'){
 
-            if (this.finger['x'] < this.busPos['x']) {
-                topPoint['x'] = Math.abs(this.finger['x'] - this.busPos['x']) / 2 + this.finger['x'];
-            } else {
-                topPoint['x'] = this.busPos['x'];
-                this.finger['x'] = this.busPos['x']
-            }
+            self.$app.$post('add_cart_goods',{
+                goods_id: goods_info.id,
+                goods_num: nums,
+                type: type,
+            }).then(response=>{
+                if (response.data.status > 0){
+                    switch (type) {
+                        case "add":
+                            self.cartData.count += nums;
 
+                            if (self.cartData.list.includes(goods_info)){
+                                goods_info.goods_num += nums;
+                            }else{
+                                goods_info.goods_num = 1;
+                            }
 
-            this.linePos = this.$options.bezier([this.finger, topPoint, this.busPos], 30);
-            this.startAnimation();
+                            self.cartData.list.push(goods_info);
+                            break;
+                    }
 
-        },
-        //开始动画
-        startAnimation() {
-            var index = 0,
-                that = this,
-                bezier_points = that.linePos['bezier_points'];
-            this.setData({
-                hide_good_box: false,
-                bus_x: that.finger['x'],
-                bus_y: that.finger['y']
-            })
-            this.timer = setInterval(function() {
-                index++;
-                that.setData({
-                    bus_x: bezier_points[index]['x'],
-                    bus_y: bezier_points[index]['y']
-                })
-                if (index >= 28) {
-                    clearInterval(that.timer);
-                    that.setData({
-                        hide_good_box: true,
-                        hideCount: false,
-                        count: that.data.count += 1
-                    })
+                    Storage.set('cart_data', self.cartData)
                 }
-            }, 33);
+                self.$app.toastInfo(response.data.message)
+            }).catch(error=>{
+                self.$app.toastInfo('网络异常')
+            })
         }
-
 
     },
     globalData:{
 
     },
     created () {
-        // //可视窗口x,y坐标
-        // console.log('this.$optionsthis.$optionsthis.$optionsthis.$options');
-        // console.log(this);
-        // this.busPos = {};
-        // this.busPos['x'] = this.$options.globalData.ww * .85;
-        // this.busPos['y'] = this.$options.globalData.hh * .85;
+        self = this;
+        self.screenSize();
+        console.log(self.busPos);
+        self.cartData = Storage.get('cart_data');
     }
 }

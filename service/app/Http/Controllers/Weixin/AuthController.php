@@ -17,13 +17,13 @@ class AuthController extends BaseController
         try{
             $params = $request->only('code', 'encryptedData', 'iv');
             if (count($params) !== 3){
-                throw new \Exception('授权失败！');
+                throw new \Exception('授权失败1！');
             }
 
             //获取 session_key and openid
             $wx_data = $this->wxapp->auth->session($params['code']);
             if (!isset($wx_data['session_key']) || !isset($wx_data['openid'])){
-                throw new \Exception('授权失败！');
+                throw new \Exception('授权失败2！');
             }
             // 获取是否存在用户
             if (!$wechat_info = WechatUsers::where('xcx_openid', $wx_data['openid'])->first()){
@@ -51,22 +51,6 @@ class AuthController extends BaseController
 
             return $this->responseData($exception->getMessage(), 0);
         }
-
-
-//        // 获取微信
-//
-//
-//
-//
-//        dd($result);
-//        if($wx_data = $this->wxapp->auth->session($params['code'])){
-//            $userModel->saveOpenid($wx_data['open_id']);
-//            return $this->responseData('', 1, compact('wx_data'));
-//        }
-
-        // 根据openid查用户是否存在
-
-
     }
 
 }

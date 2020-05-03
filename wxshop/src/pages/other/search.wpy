@@ -105,6 +105,9 @@
                 page="1"
                 url="get_goods_list"
         ></gm-loading>
+
+        <!--购物车-->
+        <gm-cart></gm-cart>
     </div>
 </template>
 
@@ -218,7 +221,9 @@
         "van-cell": "~@/vendor/vant/cell/index",
         "van-cell-group": "~@/vendor/vant/cell-group/index",
         "van-sticky": "~@/vendor/vant/sticky/index",
-        "gm-skeleton-goods" : "~@/components/skeleton/goods-item"
+        "gm-skeleton-goods" : "~@/components/skeleton/goods-item",
+        "gm-cart": "~@/components/goods/cart",
+
 
     <!--"van-popup": "~@/vendor/vant/popup/index"-->
     },

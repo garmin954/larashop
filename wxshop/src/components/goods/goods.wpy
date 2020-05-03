@@ -60,95 +60,26 @@
         /*margin-left: 0%;*/
     /*}*/
 
-    .bus {
-        position: fixed;
-        left: 85%;
-        top: 85%;
-        background: #fff;
-        border-radius: 50%;
-    }
 
-    .bus image {
-        width: 62px;
-        height: 62px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin: -4px;
-    }
-
-    .count {
-        display: block;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-        font-size: 12px;
-        background: #ff4611;
-        border-radius: 10px;
-        color: #fff;
-        position: absolute;
-        left: 34px;
-        top: 0;
-    }
-
-    .scale {
-        background: rgba(120, 188, 255, 0.3);
-        border: 1px solid rgba(0, 116, 255, 0.4);
-    }
-
-    .scale image {
-        transform: scale(1.2);
-    }
-
-    .good_box {
-        width: 40px;
-        height: 40px;
-        position: fixed;
-        border-radius: 50%;
-        overflow: hidden;
-        left: 50%;
-        top: 50%;
-        z-index: +99;
-        border: 1px solid #fff;
-        background: rgba(120, 188, 255, 0.2);
-    }
-
-    .good_box image {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
 
 </style>
 
 <template>
-    <div class="goods-item" :style="{height: height+'rpx'}">
+    <div class="goods-item" :style="{height: height+'rpx'}" @click="goToGoodsDetail">
         <image :style="{height: height-120+'rpx'}" :src="goods.goods_images" alt="" />
         <h1 class="h1">{{goods.goods_name}}</h1>
         <h2 class="h2">
             ￥{{goods.goods_price}}
             <em class="em" v-if="showOrigin">￥{{goods.goods_market_price}}</em>
-            <van-icon name="cart" @tap="touchOnGoods" color="#ffffff" />
+            <van-icon name="cart"  @tap.stop="addToCart" color="#ffffff" />
         </h2>
-        <!-- 购物车图标 和 角标数字-->
-        <view class="bus">
-            <image src="/static/images/test.jpg"></image>
-            <view class="count" hidden="{{hideCount}}">{{count}}</view>
-        </view>
-        <!-- 加购物车时飞的图片 -->
-        <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;">
-            <image src="{{feiBox}}"></image>
-        </view>
     </div>
 </template>
 
 <script>
     import wepy from '@wepy/core'
-    import $tools from '@/mixins/tools';
 
     wepy.component({
-        mixins:[$tools],
         props:{
             height:{
                 type:Number,
@@ -169,7 +100,27 @@
             imageHeight:0,
         },
         methods: {
+            goToGoodsDetail(){
+                let goods_id = this.goods.goods_id;
+                wx.navigateTo({
+                    url:`/pages/goods/goods_detail?goods_id=${goods_id}`
+                })
+            },
 
+            // 添加到购物车
+            addToCart: function(e) {
+                let cart;
+                this.$parent.$children.forEach(item=>{
+                    if (item.$is == "components/goods/cart"){
+                        cart = item;
+                    }
+                })
+                cart.touchOnGoods(e, this.goods);
+            },
+
+        },
+        created(query) {
+            var self = this;
         }
     })
 </script>

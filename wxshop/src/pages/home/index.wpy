@@ -56,6 +56,13 @@
       }
   }
 
+    .font-max{
+        font-size: 60rpx;
+    }
+    .grid-item-title{
+        font-size: 25rpx;
+    }
+
    
 </style>
 
@@ -82,16 +89,40 @@
     <!--菜单  -->
     <div class="menu-box body-container">
       <van-grid square>
-          <van-grid-item icon="photo-o" text="团购"  />
-          <van-grid-item icon="photo-o" text="秒杀"  />
-          <van-grid-item icon="photo-o" text="优惠券"  />
-          <van-grid-item icon="photo-o" text="积分商城"  />
-          <van-grid-item icon="photo-o" text="购物车"  />
-          <van-grid-item icon="photo-o" text="分类"  />
-          <van-grid-item icon="photo-o" text="品牌"  />
-          <van-grid-item use-slot>
-              <div class="" @tap="goodLinkTo">商品详情</div>
+          <van-grid-item use-slot  >
+              <i class="icon icon-group-buy font-max"></i>
+              <text class="grid-item-title">团购</text>
           </van-grid-item>
+          <van-grid-item use-slot  >
+              <i class="icon icon-spike font-max"></i>
+              <text class="grid-item-title">秒杀</text>
+          </van-grid-item>
+          <van-grid-item use-slot  >
+              <i class="icon icon-coupon font-max"></i>
+              <text class="grid-item-title">优惠券</text>
+          </van-grid-item>
+          <van-grid-item use-slot  >
+              <i class="icon icon-integral font-max"></i>
+              <text class="grid-item-title">积分商城</text>
+          </van-grid-item>
+          <van-grid-item use-slot @tap="$app.goToNavigate('/pages/cart/index', 'tabbar')" >
+              <i class="icon icon-cart font-max"></i>
+              <text class="grid-item-title" >购物车</text>
+          </van-grid-item>
+          <van-grid-item use-slot @tap="$app.goToNavigate('/pages/cate/index', 'tabbar')"  >
+              <i class="icon icon-cate font-max"></i>
+              <text class="grid-item-title">分类</text>
+          </van-grid-item>
+          <van-grid-item use-slot  >
+              <i class="icon icon-brand font-max"></i>
+              <text class="grid-item-title">品牌</text>
+          </van-grid-item>
+          <van-grid-item use-slot  >
+              <i class="icon icon-collect font-max"></i>
+              <text class="grid-item-title">收藏</text>
+          </van-grid-item>
+
+
       </van-grid>
 
 
@@ -129,7 +160,11 @@
     <van-toast v-if="getMore" id="van-toast"/>
     <van-toast id="custom-selector"></van-toast>
 
+    <!-- 登录框-->
     <gm-popup-login></gm-popup-login>
+
+    <!--购物车-->
+    <gm-cart></gm-cart>
   </div>
 
 </template>
@@ -145,20 +180,6 @@
   wepy.page({
       // mixins: [$wxLogin],
       store,
-      config: {
-        navigationBarTitleText: "test"
-      },
-      hooks: {
-      // Page 级别 hook, 只对当前 Page 的 setData 生效。
-      "before-setData": function (dirty) {
-        if (Math.random() < 0.2) {
-          console.log("setData canceled")
-          return false // Cancel setData
-        }
-        dirty.time = +new Date()
-        return dirty
-      }
-    },
       data: {
       auto: true,
       time: 2000,
@@ -260,7 +281,8 @@
     },
       onLoad(){
       self = this
-      wx.hideTabBar();
+          console.log(self);
+          wx.hideTabBar();
       self.loadings();
       self.initDatas();
     },
@@ -310,7 +332,7 @@
         "gm-loading" : "~@/components/loading",
         "van-loading": "~@/vendor/vant/loading/index",
         "gm-popup-login" : "~@/components/popup-login",
-
+        "gm-cart": "~@/components/goods/cart",
     },
     "backgroundTextStyle" : "dark", <!--下拉 loading 的样式，仅支持 dark / light-->
     "enablePullDownRefresh": true,  <!--是否开启当前页面下拉刷新-->

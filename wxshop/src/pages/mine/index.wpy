@@ -69,7 +69,7 @@
             }
         }
     }
-    .commonTools{
+    .commoncard{
         position: relative;
         top: 4rem;
         /*font-size: 25rpx;*/
@@ -133,7 +133,7 @@
                     <van-grid-item icon="after-sale" text="退款/售后" />
                 </van-grid>
         </div>
-        <div class="commonTools">
+        <div class="commoncard">
             <van-cell title="常见工具" :border="false"/>
             <van-grid :border="false" :column-num="4">
                 <van-grid-item use-slot>

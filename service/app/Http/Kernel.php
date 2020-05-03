@@ -42,7 +42,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            
+
         ],
     ];
 
@@ -66,6 +66,8 @@ class Kernel extends HttpKernel
 
         'refreshtk' => \App\Http\Middleware\RefreshToken::class, // token 后台 中间件
         'refreshtku' => \App\Http\Middleware\RefreshTokenUser::class, // token 非后台 中间件
+        'weapp' => \App\Http\Middleware\Weapp::class, // token 小程序 中间件
+
     ];
 
     /**

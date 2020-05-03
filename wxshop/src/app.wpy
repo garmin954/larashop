@@ -12,13 +12,16 @@ import wepy from '@wepy/core';
 import vuex from '@wepy/x';
 import $wxLogin from '@/mixins/login'
 import $http from '@/mixins/request'
-import $tools from '@/mixins/tools';
+import $cart from '@/mixins/cart';
+import $tools from '@/common/tools';
+
 
 var self;
 wepy.use(vuex);
 
+
 wepy.app({
-  mixins: [$http,$wxLogin,$tools],
+  mixins: [$http,$wxLogin],
   hooks: {
     // App 级别 hook，对整个 App 生效
 
@@ -34,14 +37,14 @@ wepy.app({
 
   onLaunch() {
       // 判断是否登录？
-      console.log(this)
-      this.screenSize();
+      // console.log(this)
       // console.log(this.$options.globalData.ww)
+      // 获取购物车数据
 
   },
-  methods: {
-
-  },
+    methods: {
+      ...$tools,
+    },
 });
 </script>
 <config>
@@ -51,10 +54,10 @@ wepy.app({
         'pages/home/index',  <!-- 首页 -->
         'pages/mine/index',  <!-- 个人中心 -->
         'pages/cate/index',  <!-- 商品分类 -->
-        'pages/card/index',  <!-- 购物车 -->
         'pages/other/login',  <!-- 登录 -->
         'pages/goods/goods_detail',  <!-- 商品详情 -->
         'pages/other/search',  <!-- 搜索 -->
+    'pages/cart/index',  <!-- 购物车 -->
 
 
     ],
@@ -77,10 +80,10 @@ wepy.app({
             "iconPath" : '/static/images/bar/cate.png',
             "selectedIconPath" : '/static/images/bar/cate-active.png',
             },  {
-            "pagePath": "pages/card/index",
+            "pagePath": "pages/cart/index",
             "text": "购物车",
-            "iconPath" : '/static/images/bar/card.png',
-            "selectedIconPath" : '/static/images/bar/card-active.png',
+            "iconPath" : '/static/images/bar/cart.png',
+            "selectedIconPath" : '/static/images/bar/cart-active.png',
             },{
             "pagePath": "pages/mine/index",
             "text": "个人中心",

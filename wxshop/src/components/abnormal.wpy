@@ -38,7 +38,7 @@
     <div class="aui-flex aui-flex-title" style="background:none">
         <div class="aui-flex-box">
             <i v-if="type == 'no_data'" class="icon icon-empty"></i>
-            <i v-if="type == 'card'" class="icon icon-empty-card"></i>
+            <i v-if="type == 'cart'" class="icon icon-empty-card"></i>
 
             <text class="title">{{ titleRes}}</text>
         </div>
@@ -52,7 +52,7 @@
         props:{
             type:{
                 type:String,
-                default:'no_data'
+                    default:'no_data'
             },
             title:{
                 type:String,
@@ -62,7 +62,7 @@
         data:{
             titles:{
                 'no_data': '没有数据',
-                'card': '没有商品',
+                'cart': '没有商品',
 
             },
             

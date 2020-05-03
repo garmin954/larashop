@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\GoodsSpec;
 use App\Models\Goods;
 
-class Cart extends Model
+class Cart extends Base
 {
     protected $table = "cart"; //指定表
     protected $primaryKey = "id"; //指定id字段
@@ -40,7 +40,7 @@ class Cart extends Model
             }else{
                 return ['status'=>false,'msg'=>'购物车添加错误'];
             }
-            
+
         }else{
             $rs = $this->insert($data);
             if($rs){
@@ -57,13 +57,13 @@ class Cart extends Model
         }
 
         return ['status'=>true,'msg'=>'加入购物车成功'];
-        
+
     }
 
     // 编辑购物车商品信息 false 减 true  加  $data['id']  $data['goods_num'] $data['type']
     public function change_cart($data,$type=false){
         $is_change_num = $data['type']??false; // 是否直接改变数量
-        
+
 
         $cart_info = $this->where('id',$data['id'])->first(); // 获取这个购物车商品的信息
 
@@ -80,7 +80,7 @@ class Cart extends Model
             $goods_model = new Goods();
             $goods_spec_info = $goods_model->select('goods_num')->find($cart_info['goods_id']);
         }
-        
+
 
         // 如果为true 则表示直接修改数据
         if(!empty($is_change_num)){
@@ -94,7 +94,7 @@ class Cart extends Model
         }else{
             $update_num = $data['goods_num'];
         }
-        
+
         // 判断是否还有足够的库存
         if($type){
             if($goods_spec_info['goods_num']<$update_num){
@@ -108,7 +108,7 @@ class Cart extends Model
                 }else{
                     $goods_model->where('id',$cart_info['goods_id'])->decrement('goods_num',$update_num);
                 }
-                
+
             }
         }else{
             // 修改数据库购物车 商品数量
@@ -127,7 +127,7 @@ class Cart extends Model
         }
 
         return ['status'=>true,'msg'=>'修改成功'];
-        
+
     }
 
     // 删除购物车的数据
@@ -147,9 +147,14 @@ class Cart extends Model
             }else{
                 $goods_model->where('id',$v['goods_id'])->increment('goods_num',$v['goods_num']); // 修改商品的数据
             }
-            
+
         }
 
         return true;
+    }
+
+    public function goods()
+    {
+        return $this->hasOne(\App\Models\Goods::class,'user_id', 'id');
     }
 }

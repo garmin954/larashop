@@ -128,7 +128,7 @@
                     
                     setTimeout(res => Toast('加载完成'), 500);
                     self.showLoading = true;
-
+                    wx.showTabBar();
                 }).catch((error) => {
                     console.log(error)
                 })
@@ -139,6 +139,7 @@
                     message: '加载中...',
                     duration:0
                 });
+                wx.hideTabBar();
             }
         },
 

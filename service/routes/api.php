@@ -467,4 +467,10 @@ Route::namespace('Weixin')->prefix('weixin')->group(function(){
     Route::get('/goods/search_goods_list', 'GoodsController@searchGoodsList');
 
 
+
+    Route::group(['middleware'=> 'weapp'], function (){
+        Route::post('/cart/get_cart_list', 'CartController@getCartList'); // 获取购物车
+        Route::post('/cart/add_cart_goods', 'CartController@modifyCartGoods'); // 添加到购物车
+    });
+
 });

@@ -9,6 +9,8 @@ let api = {
     get_goods_class_list : `goods/get_goods_class`, // 商品分类
     login : `auth/login`, // 登录
     search_goods_list : `goods/search_goods_list`, // 搜索商品
+    get_cart_list : `cart/get_cart_list`, // 获取购物车
+    add_cart_goods : `cart/add_cart_goods`, // 添加到购物车
 
 }
 
