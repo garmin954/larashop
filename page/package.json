@@ -21,11 +21,11 @@
     "wangeditor": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-router": "^4.0.0-alpha.4",
     "@vue/cli-plugin-vuex": "^4.0.0-alpha.4",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^5.0.8",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "echarts": "^4.2.0-rc.2",
